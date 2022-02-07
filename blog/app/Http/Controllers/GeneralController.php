@@ -8,14 +8,16 @@ use App\Models\Category;
 
 class GeneralController extends Controller
 {
-    public function getCategory()
+    public function getAll()
     {
 
-      return view('general',
-      [
-      'categories' => Category::all(),
-      ]);
+      $articles = $this->getArticlesAll();
+      $categories = $this->getCategoryAll();
 
+      return view('general',[
+          'articles' => $articles,
+          'categories' => $categories
+      ]);
 
     }
 
@@ -23,13 +25,29 @@ class GeneralController extends Controller
     {
 
         $articles = Article::where('id_category', $idCategory)->get();
+        $categories = $this->getCategoryAll();
 
         return view('general',[
-            'articles' => $articles
+            'articles' => $articles,
+            'categories' => $categories
         ]);
 
     }
 
+    public function getArticlesAll()
+    {
+
+        $articles = Article::all();
+        return $articles;
+
+    }
+
+    public function getCategoryAll()
+    {
+        $categories = Category::all();
+        return $categories;
+
+    }
 
 
 

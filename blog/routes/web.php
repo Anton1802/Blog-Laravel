@@ -4,9 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GeneralController;
 
 
-Route::get('/', [GeneralController::class, 'getCategory'])->name('home');
+Route::get('/', [GeneralController::class, 'getAll'])->name('home');
 Route::get('/category/{idCategory}', [GeneralController::class, 'getArticlesIdCategory'])->name('home');
-Route::get('/category/{idCategory}', [GeneralController::class, 'getCategory'])->name('home');
 
 
 Route::get('/single', function () {

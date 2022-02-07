@@ -12,14 +12,16 @@
 <div class="content">
 <div class="col-md-7 content-left">
   <h5 class="head">последние новости</h5>
-  <!-- foreach($articles as $article)
+  @if(Route::is('home'))
+  @foreach($articles as $article)
   <div class="article">
     <h6></h6>
-    <a class="title" href="single.html"></a>
-    <a href="single.html"><img src="images/a1.jpg" alt="" /></a>
-    <p></p>
+    <a class="title" href="single.html">{{ $article->title}}</a>
+    <a href="single.html"><img src="{{ asset($article->path_img) }}" alt="" /></a>
+    <p>{{ $article->text }}</p>
   </div>
-  endforeach -->
+  @endforeach
+  @endif
 </div>
 <div class="col-md-5 content-right">
 <div class="content-right-top">
@@ -61,7 +63,7 @@
     <h5>рекомендуемые</h5>
     <div class="editors-pic">
       <div class="e-pic">
-        <a href="single.html"><img src="images/ep1.jpg" alt="" /></a>
+        <a href="single.html"><img src="{{ asset('images/ep1.jpg') }}" alt="" /></a>
       </div>
       <div class="e-pic-info">
         <a href="single.html">MarkerBot Announces the ‘Replicator 2x’  For the Experimental</a>
@@ -72,7 +74,7 @@
     </div>
     <div class="editors-pic">
       <div class="e-pic">
-        <a href="single.html"><img src="images/ep2.jpg" alt="" /></a>
+        <a href="single.html"><img src="{{ asset('images/ep2.jpg') }}" alt="" /></a>
       </div>
       <div class="e-pic-info">
         <a href="single.html">3D Printed Record – the next revolution?</a>
@@ -83,7 +85,7 @@
     </div>
     <div class="editors-pic">
       <div class="e-pic">
-        <a href="single.html"><img src="images/ep3.jpg" alt="" /></a>
+        <a href="single.html"><img src="{{ asset('images/ep3.jpg') }}" alt="" /></a>
       </div>
       <div class="e-pic-info">
         <a href="single.html">MarkerBot Announces the ‘Replicator 2x’  For the Experimental</a>
@@ -94,7 +96,7 @@
     </div>
     <div class="editors-pic">
       <div class="e-pic">
-        <a href="single.html"><img src="images/ep4.jpg" alt="" /></a>
+        <a href="single.html"><img src="{{ asset('images/ep4.jpg') }}" alt="" /></a>
       </div>
       <div class="e-pic-info">
         <a href="single.html">3D Printed Record – the next revolution?</a>

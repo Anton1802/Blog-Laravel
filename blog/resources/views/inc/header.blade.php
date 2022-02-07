@@ -33,6 +33,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="clearfix"></div>
   </div>
 </div>
+@if(Route::is('home'))
 <div class="container">
   <div class="header-bottom">
         <div class="type">
@@ -41,9 +42,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <span class="menu"></span>
     <div class="list-nav">
       <ul>
+
         @foreach($categories as $category)
-        <li><a href="/category/{{ $category->id }}">{{ $category->name }}</a></li>|
+        <li><a href="/{{ $category->id }}">{{ $category->name }}</a></li>|
         @endforeach
+        @endif
       </ul>
     </div>
     <!-- script for menu -->

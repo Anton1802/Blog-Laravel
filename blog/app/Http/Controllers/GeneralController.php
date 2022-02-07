@@ -16,6 +16,22 @@ class GeneralController extends Controller
       'categories' => Category::all(),
       ]);
 
+
     }
+
+    public function getArticlesIdCategory($idCategory)
+    {
+
+        $articles = Article::where('id_category', $idCategory)->get();
+
+        return view('general',[
+            'articles' => $articles
+        ]);
+
+    }
+
+
+
+
 
 }

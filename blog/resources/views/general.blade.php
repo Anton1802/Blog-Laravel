@@ -12,7 +12,7 @@
 <div class="content">
 <div class="col-md-7 content-left">
   <h5 class="head">последние новости</h5>
-  @if(Route::is('home'))
+  @if(Route::is('home') && $articles != "")
   @foreach($articles as $article)
   <div class="article">
     <h6></h6>
@@ -24,17 +24,21 @@
   @endif
 </div>
 <div class="col-md-5 content-right">
+<h5 class="head">популярные</h5>
+@if(Route::is('home'))
 <div class="content-right-top">
-  <h5 class="head">популярные</h5>
+  @foreach($popular_articles as $article)
   <a href="single.html">
     <div class="editor text-center">
-      <h3>DeltaMaker – The new kid on the block An Elegant 3D Printer</h3>
-      <p>A new cheap ass 3D Printer worth checking out</p>
+      <h3>{{ $article->title }}</h3>
+      <p>{{ Str::substr($article->text, 0, 55)}}...</p>
       <label>2 Days Ago</label>
       <span></span>
     </div>
-  </a>
-  <a class="active" href="single.html">
+@endforeach
+@endif
+  <!-- </a> -->
+  <!-- <a class="active" href="single.html">
     <div class="editor text-center">
       <h3>Software Review: Autodesk Inventor Fusion for Mac</h3>
       <p>3D Printing, 3D Software</p>
@@ -56,8 +60,8 @@
       <p>3D Printing, 3D Software</p>
       <label>3 Days Ago</label>
       <span></span>
-    </div>
-  </a>
+    </div> -->
+  <!-- </a> -->
   </div>
   <div class="editors-pic-grids">
     <h5>рекомендуемые</h5>

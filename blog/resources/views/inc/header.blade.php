@@ -44,7 +44,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       <ul>
 
         @foreach($categories as $category)
-        <li><a href="/{{ $category->id }}">{{ $category->name }}</a></li>|
+        <li><a href="/category/{{ $category->id }}">{{ $category->name }}</a></li>|
         @endforeach
         @endif
       </ul>

@@ -16,8 +16,8 @@
   @foreach($articles as $article)
   <div class="article">
     <h6></h6>
-    <a class="title" href="single.html">{{ $article->title}}</a>
-    <a href="single.html"><img src="{{ asset($article->path_img) }}" alt="" /></a>
+    <a class="title" href="/single/{{ $article->id }}">{{ $article->title}}</a>
+    <a href="/single/{{ $article->id }}"><img src="{{ asset($article->path_img) }}" alt="" /></a>
     <p>{{ $article->text }}</p>
   </div>
   @endforeach
@@ -28,11 +28,11 @@
 @if(Route::is('home'))
 <div class="content-right-top">
   @foreach($popular_articles as $article)
-  <a href="single.html">
+  <a href="/single/{{ $article->id }}">
     <div class="editor text-center">
       <h3>{{ $article->title }}</h3>
       <p>{{ Str::substr($article->text, 0, 55)}}...</p>
-      <label>2 Days Ago</label>
+      <label> Дата: {{ $article->created_at }}</label>
       <span></span>
     </div>
 @endforeach

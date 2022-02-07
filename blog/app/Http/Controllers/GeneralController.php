@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Article;
 use App\Models\Category;
+use App\Models\Comment;
+use App\Models\User;
 
 class GeneralController extends Controller
 {

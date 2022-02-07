@@ -8,17 +8,21 @@
 		<div class="content">
 			<div class="single-page">
 				<div class="print-main">
-					<h3>Printing</h3>
-					<a href="single.html">Software Review: Autodesk Inventor Fusion for Mac</a>
-					<p class="sub_head">Posted by <a href="#">Admin</a> on february 14,2015</p>
-					<a href="single.html"><img src="images/printing.jpg" class="img-responsive" alt="" /></a>
-					<p class="span"><a href="#">3D Printing, <a href="#">3D Software,</a><a href="#"> Files to Print </a> |  on february 14,2015</p>
-					<p class="ptext">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose injected humour and the like</p>
-					<p class="ptext">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose injected humour and the like</p>
+					<!-- Category -->
+					<h3>{{ $category->name }}</h3>
+					<!-- Title -->
+					<a href="/single/{{ $article->id }}">{{ $article->title }}</a>
+					<!-- Image -->
+					<img src="{{ asset($article->path_img) }}" class="img-responsive" alt="" />
+					<!-- Date -->
+					<!-- <p class="span">on february 14,2015</p> -->
+					<p class="span">Дата публикации: {{ $article->created_at }}</p>
+					<!-- Text -->
+					<p class="ptext">{{ $article->text }}</p>
 				</div>
 
 			</div>
-			<div class="col-md-7 single-content-left">
+			<!-- <div class="col-md-7 single-content-left">
 				<div class="features-list">
 					<h3>Features</h3>
 						<ul>
@@ -31,38 +35,39 @@
 							<li><a href="#">Rigid aluminum extrusion construction</a></li>
 							<li><a href="#">Utilizes open source software tool chain</a></li>
 						</ul>
-				</div>
+				</div> -->
 				<div class="single">
 				<div class="leave">
-				<h4>Leave a comment</h4>
+				<h4>Оставить комментарий</h4>
 				</div>
-				<form id="commentform">
-				     <p class="comment-form-author-name"><label for="author">Name</label>
+				<form id="commentform" action="#" method="POST">
+					@csrf
+				     <p class="comment-form-author-name"><label for="author">Ваше имя</label>
 						<input id="author" name="author" type="text" value="" size="30" aria-required="true">
 					 </p>
 					 <p class="comment-form-email">
-						<label for="email">Email</label>
+						<label for="email">Почта</label>
 						<input id="email" name="email" type="text" value="" size="30" aria-required="true">
 					 </p>
 					 <p class="comment-form-url">
-						<label for="url">Website</label>
-						<input id="url" name="url" type="text" value="http://w3layouts.com" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'http://w3layouts.com';}">
+						<label for="url">Веб-сайт</label>
+						<input id="url" name="url" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '')">
 					 </p>
 					 <p class="comment-form-comment">
-						<label for="comment">Comment</label>
+						<label for="comment">Комментарий</label>
 						<textarea></textarea>
 					 </p>
 					 <div class="clearfix"></div>
 					<p class="form-submit">
-			           <input name="submit" type="submit" id="submit" value="Send">
+			           <input name="submit" type="submit" id="submit" value="Отправить">
 					</p>
 					<div class="clearfix"></div>
 				   </form>
 				   	<div class="comments1">
-								<h4>COMMENTS</h4>
+								<h4>комментарии</h4>
 			  				<div class="comments-main">
 									<div class="col-md-3 cmts-main-left">
-										<img src="images/avatar.jpg" alt="">
+										<img src="{{asset('images/avatar.jpg')}}" alt="">
 									</div>
 									<div class="col-md-9 cmts-main-right">
 										<h5>TOM BROWN</h5>
@@ -79,29 +84,11 @@
 									</div>
 									<div class="clearfix"></div>
 								</div>
-								<div class="comments-main">
-									<div class="col-md-3 cmts-main-left">
-										<img src="images/avatar.jpg" alt="">
-									</div>
-									<div class="col-md-9 cmts-main-right">
-										<h5>MARK JOHNSON</h5>
-										<p>Vivamus congue turpis in laoreet sem nec ultrices. Fusce blandit nunc vehicula massa vehicula tincidunt. Nam venenatis cursus urna sed gravida. Ut tincidunt elit ut quam malesuada consequat. Sed semper purus sit amet lorem elementum faucibus.</p>
-										<div class="cmts">
-											<div class="col-md-6 cmnts-left">
-												<p>On April 14, 2014, 18:01</p>
-											</div>
-											<div class="col-md-6 cmnts-right">
-												<a href="#">Reply</a>
-											</div>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-			  				</div>
 							</div>
+						</div>
+					</div>
 			</div>
-			<div class="col-md-5 content-right content-right-top">
+			<!-- <div class="col-md-5 content-right content-right-top">
 			<h5 class="head">Popular</h5>
 				<a href="single.html">
 					<div class="editor text-center">
@@ -178,12 +165,6 @@
 							<a href="single.html">3D Printed Record – the next revolution?</a>
 							<span></span>
 							<label>2 Days Ago</label>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-				</div>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-	</div>
+						</div> -->
+
 @endsection

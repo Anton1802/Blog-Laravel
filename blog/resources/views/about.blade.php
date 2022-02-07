@@ -12,7 +12,7 @@
 <div class="content">
 	<div class="about-content">
 		<!-- about -->
-	<h3>About Us</h3>
+	<h3>О нас</h3>
 	<img src="images/abt_pic.jpg" alt=" " />
 	<p>Having hands on experience in creating innovative designs, I do offer design
 		solutions which harness the new possibilities of web based communication,

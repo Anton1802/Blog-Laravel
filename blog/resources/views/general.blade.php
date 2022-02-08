@@ -35,59 +35,32 @@
       <label> Дата: {{ $article->created_at }}</label>
       <span></span>
     </div>
+  </a>
 @endforeach
+</div>
 
 
-  </div>
   <div class="editors-pic-grids">
     <h5>рекомендуемые</h5>
+    @foreach($rec_articles as $article)
     <div class="editors-pic">
       <div class="e-pic">
-        <a href="single.html"><img src="{{ asset('images/ep1.jpg') }}" alt="" /></a>
+        <a href="/single/{{ $article->id }}"><img src="{{ asset($article->path_img) }}" alt="" /></a>
       </div>
       <div class="e-pic-info">
-        <a href="single.html">MarkerBot Announces the ‘Replicator 2x’  For the Experimental</a>
+        <a href="/single/{{ $article->id }}">{{ $article->title }}</a>
         <span></span>
-        <label>2 Days Ago</label>
+        <label>{{ $article->created_at }}</label>
       </div>
       <div class="clearfix"></div>
     </div>
-    <div class="editors-pic">
-      <div class="e-pic">
-        <a href="single.html"><img src="{{ asset('images/ep2.jpg') }}" alt="" /></a>
-      </div>
-      <div class="e-pic-info">
-        <a href="single.html">3D Printed Record – the next revolution?</a>
-        <span></span>
-        <label>2 Days Ago</label>
-      </div>
-      <div class="clearfix"></div>
-    </div>
-    <div class="editors-pic">
-      <div class="e-pic">
-        <a href="single.html"><img src="{{ asset('images/ep3.jpg') }}" alt="" /></a>
-      </div>
-      <div class="e-pic-info">
-        <a href="single.html">MarkerBot Announces the ‘Replicator 2x’  For the Experimental</a>
-        <span></span>
-        <label>2 Days Ago</label>
-      </div>
-      <div class="clearfix"></div>
-    </div>
-    <div class="editors-pic">
-      <div class="e-pic">
-        <a href="single.html"><img src="{{ asset('images/ep4.jpg') }}" alt="" /></a>
-      </div>
-      <div class="e-pic-info">
-        <a href="single.html">3D Printed Record – the next revolution?</a>
-        <span></span>
-        <label>2 Days Ago</label>
-      </div>
-      <div class="clearfix"></div>
+    @endforeach
+    <div class="clearfix"></div>
     </div>
   </div>
 </div>
 <div class="clearfix"></div>
 </div>
-</div>
+
+
 @endsection

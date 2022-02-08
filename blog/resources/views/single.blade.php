@@ -65,7 +65,9 @@
 				   </form>
 
 				   	<div class="comments1">
+								@if($comments->isNotEmpty())
 								<h4>Комментарии</h4>
+								@endif
 								@foreach($comments as $com)
 			  				<div class="comments-main">
 									<div class="col-md-3 cmts-main-left">

@@ -16,11 +16,13 @@ class GeneralController extends Controller
       $articles = $this->getArticlesAll();
       $categories = $this->getCategoryAll();
       $popular_articles = $this->getPopularArticles();
+      $rec_articles = $this->getRecomendedArticles();
 
       return view('general',[
           'articles' => $articles,
           'categories' => $categories,
-          'popular_articles' => $popular_articles
+          'popular_articles' => $popular_articles,
+          'rec_articles' => $rec_articles
       ]);
 
     }
@@ -31,11 +33,13 @@ class GeneralController extends Controller
         $articles = Article::where('id_category', $idCategory)->get();
         $categories = $this->getCategoryAll();
         $popular_articles = $this->getPopularArticles();
+        $rec_articles = $this->getRecomendedArticles();
 
         return view('general',[
             'articles' => $articles,
             'categories' => $categories,
-            'popular_articles' => $popular_articles
+            'popular_articles' => $popular_articles,
+            'rec_articles' => $rec_articles
         ]);
 
     }
@@ -61,6 +65,14 @@ class GeneralController extends Controller
         $avg = floor(Article::avg('views'));
         $popular_articles = Article::where('views', '>=', $avg)->take(4)->get();
         return $popular_articles;
+
+    }
+
+    public function getRecomendedArticles()
+    {
+
+      $rec_articles = Article::where('recommended', true)->take(4)->get();
+      return $rec_articles;
 
     }
 

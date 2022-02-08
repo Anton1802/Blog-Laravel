@@ -50,7 +50,7 @@
       <div class="e-pic-info">
         <a href="/single/{{ $article->id }}">{{ $article->title }}</a>
         <span></span>
-        <label>{{ $article->created_at }}</label>
+        <label>Дата: {{ $article->created_at }}</label>
       </div>
       <div class="clearfix"></div>
     </div>

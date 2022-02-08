@@ -1,4 +1,3 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="{{ asset('css/bootstrap.css') }}" rel='stylesheet' type='text/css' />
 <!-- Custom Theme files -->
 <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" media="all" />

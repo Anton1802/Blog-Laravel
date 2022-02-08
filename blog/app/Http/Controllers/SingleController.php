@@ -7,6 +7,7 @@ use App\Models\Article;
 use App\Models\Category;
 use App\Models\Comment;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\CommentRequest;
 
 class SingleController extends Controller
 {
@@ -35,7 +36,7 @@ class SingleController extends Controller
 
     }
 
-    public function createComment(Request $request)
+    public function createComment(CommentRequest $request)
     {
 
 

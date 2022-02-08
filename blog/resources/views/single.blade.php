@@ -22,24 +22,16 @@
 				</div>
 
 			</div>
-			<!-- <div class="col-md-7 single-content-left">
-				<div class="features-list">
-					<h3>Features</h3>
-						<ul>
-							<li><a href="#">Fused Filament Fabrication (FFF) using 1.75 mm filament</a></li>
-							<li><a href="#">100 micron layer resolution capability</a></li>
-							<li><a href="#">9″ diameter x 11″ tall build envelope (approximate)</a></li>
-							<li><a href="#">Heated build platform (optional)</a></li>
-							<li><a href="#">Efficient footprint to build envelope ratio</a></li>
-							<li><a href="#">Printed object viewable from 360 degrees</a></li>
-							<li><a href="#">Rigid aluminum extrusion construction</a></li>
-							<li><a href="#">Utilizes open source software tool chain</a></li>
-						</ul>
-				</div> -->
 				<div class="single">
 				<div class="leave">
 				<h4>Оставить комментарий</h4>
 				</div>
+
+				<!-- Вывод сообщения об ошибках -->
+				@if($errors->any())
+				@include('errors.error')
+				@endif
+
 				<form id="commentform" action="/comment" method="POST">
 					@csrf
 				     <p class="comment-form-author-name"><label for="author">Ваше имя</label>

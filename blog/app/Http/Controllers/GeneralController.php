@@ -59,7 +59,7 @@ class GeneralController extends Controller
     {
 
         $avg = floor(Article::avg('views'));
-        $popular_articles = Article::where('views', '>', $avg)->take(4)->get();
+        $popular_articles = Article::where('views', '>=', $avg)->take(4)->get();
         return $popular_articles;
 
     }

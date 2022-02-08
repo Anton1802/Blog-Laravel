@@ -1,6 +1,6 @@
+<title>{{ $article->title }}</title>
 @extends('index')
 @section('content')
-<title></title>
 			<div class="clearfix"></div>
         </div>
 	</div>
@@ -40,7 +40,7 @@
 				<div class="leave">
 				<h4>Оставить комментарий</h4>
 				</div>
-				<form id="commentform" action="#" method="POST">
+				<form id="commentform" action="/comment" method="POST">
 					@csrf
 				     <p class="comment-form-author-name"><label for="author">Ваше имя</label>
 						<input id="author" name="author" type="text" value="" size="30" aria-required="true">
@@ -55,7 +55,7 @@
 					 </p>
 					 <p class="comment-form-comment">
 						<label for="comment">Комментарий</label>
-						<textarea></textarea>
+						<textarea name="text" ></textarea>
 					 </p>
 					 <div class="clearfix"></div>
 					<p class="form-submit">
@@ -63,108 +63,34 @@
 					</p>
 					<div class="clearfix"></div>
 				   </form>
+
 				   	<div class="comments1">
-								<h4>комментарии</h4>
+								<h4>Комментарии</h4>
+								@foreach($comments as $com)
 			  				<div class="comments-main">
 									<div class="col-md-3 cmts-main-left">
 										<img src="{{asset('images/avatar.jpg')}}" alt="">
 									</div>
 									<div class="col-md-9 cmts-main-right">
-										<h5>TOM BROWN</h5>
-										<p>Vivamus congue turpis in laoreet sem nec ultrices. Fusce blandit nunc vehicula massa vehicula tincidunt. Nam venenatis cursus urna sed gravida. Ut tincidunt elit ut quam malesuada consequat. Sed semper purus sit amet lorem elementum faucibus.</p>
+										<h5>{{ $com->username }}</h5>
+										<p>{{ $com->text }}</p>
 										<div class="cmts">
 											<div class="col-md-6 cmnts-left">
-												<p>On April 14, 2014, 18:01</p>
-											</div>
-											<div class="col-md-6 cmnts-right">
-												<a href="#">Reply</a>
+												<p>Дата: {{ $com->created_at }}</p>
 											</div>
 											<div class="clearfix"></div>
 										</div>
 									</div>
 									<div class="clearfix"></div>
 								</div>
+											@endforeach
+									</div>
+									<div class="clearfix"></div>
+								</div>
 							</div>
+							<div class="clearfix"></div>
+						</div>
 						</div>
 					</div>
-			</div>
-			<!-- <div class="col-md-5 content-right content-right-top">
-			<h5 class="head">Popular</h5>
-				<a href="single.html">
-					<div class="editor text-center">
-						<h3>DeltaMaker – The new kid on the block An Elegant 3D Printer</h3>
-						<p>A new cheap ass 3D Printer worth checking out</p>
-						<label>2 Days Ago</label>
-						<span></span>
-					</div>
-				</a>
-				<a class="active" href="single.html">
-					<div class="editor text-center">
-						<h3>Software Review: Autodesk Inventor Fusion for Mac</h3>
-						<p>3D Printing, 3D Software</p>
-						<label>3 Days Ago</label>
-						<span></span>
-					</div>
-				</a>
-				<a href="single.html">
-					<div class="editor text-center">
-						<h3>DeltaMaker – The new kid on the block An Elegant 3D Printer</h3>
-						<p>A new cheap ass 3D Printer worth checking out</p>
-						<label>2 Days Ago</label>
-						<span></span>
-					</div>
-				</a>
-				<a href="single.html">
-					<div class="editor text-center">
-						<h3>Software Review: Autodesk Inventor Fusion for Mac</h3>
-						<p>3D Printing, 3D Software</p>
-						<label>3 Days Ago</label>
-						<span></span>
-					</div>
-				</a>
-				<div class="editors-pic-grids">
-					<h5>Editors Pick</h5>
-					<div class="editors-pic">
-						<div class="e-pic">
-							<a href="single.html"><img src="images/ep1.jpg" alt="" /></a>
-						</div>
-						<div class="e-pic-info">
-							<a href="single.html">MarkerBot Announces the ‘Replicator 2x’  For the Experimental</a>
-							<span></span>
-							<label>2 Days Ago</label>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-					<div class="editors-pic">
-						<div class="e-pic">
-							<a href="single.html"><img src="images/ep2.jpg" alt="" /></a>
-						</div>
-						<div class="e-pic-info">
-							<a href="single.html">3D Printed Record – the next revolution?</a>
-							<span></span>
-							<label>2 Days Ago</label>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-					<div class="editors-pic">
-						<div class="e-pic">
-							<a href="single.html"><img src="images/ep3.jpg" alt="" /></a>
-						</div>
-						<div class="e-pic-info">
-							<a href="single.html">MarkerBot Announces the ‘Replicator 2x’  For the Experimental</a>
-							<span></span>
-							<label>2 Days Ago</label>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-					<div class="editors-pic">
-						<div class="e-pic">
-							<a href="single.html"><img src="images/ep4.jpg" alt="" /></a>
-						</div>
-						<div class="e-pic-info">
-							<a href="single.html">3D Printed Record – the next revolution?</a>
-							<span></span>
-							<label>2 Days Ago</label>
-						</div> -->
 
 @endsection

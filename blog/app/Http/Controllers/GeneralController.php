@@ -30,7 +30,7 @@ class GeneralController extends Controller
     public function getArticlesIdCategory($idCategory)
     {
 
-        $articles = Article::where('id_category', $idCategory)->get();
+        $articles = Article::where('id_category', $idCategory)->simplePaginate(2);
         $categories = $this->getCategoryAll();
         $popular_articles = $this->getPopularArticles();
         $rec_articles = $this->getRecomendedArticles();
@@ -47,7 +47,7 @@ class GeneralController extends Controller
     public function getArticlesAll()
     {
 
-        $articles = Article::all();
+        $articles = Article::simplePaginate(2);
         return $articles;
 
     }

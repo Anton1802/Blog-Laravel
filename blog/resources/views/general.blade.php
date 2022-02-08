@@ -62,5 +62,6 @@
 <div class="clearfix"></div>
 </div>
 
+{{ $articles->links('inc.pagination') }}
 
 @endsection

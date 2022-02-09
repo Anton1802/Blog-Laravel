@@ -268,6 +268,7 @@ a.title {
 .e-pic img {
 	width:100%;
 	margin-top: -1px;
+	height: 10%;
 }
 .e-pic-info {
 	float:left;

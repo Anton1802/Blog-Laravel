@@ -1,4 +1,4 @@
-extends('index')
+@extends('index')
 
 @section('title', 'Регистрация')
 
@@ -14,7 +14,7 @@ extends('index')
             @include('errors.error')
             @endif
             <div class="form-group">
-                <label>Name</label>
+                <label>Имя</label>
                 <input type="text" class="form-control" name="name" value="">
             </div>
             <div class="form-group">

@@ -4,6 +4,12 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
+
+.autho{
+	margin-top: 10em;
+	margin-bottom:26em;
+}
+
 body{
 	padding:0;
 	margin:0;
@@ -904,6 +910,12 @@ p.span a {
 /*-- responsive-design starts-here --*/
 
 @media screen and (max-width: 1024px) {
+
+	.autho{
+		margin-top: 33em;
+		margin-bottom:40.6em;
+	}
+
 	.logo a h1 {
 		font-size: 2.8em;
 	}
@@ -994,6 +1006,12 @@ p.span a {
 	}
 }
 @media screen and (max-width: 768px) {
+
+	.autho{
+		margin-top: 24.2em;
+		margin-bottom:26em;
+	}
+
 	.footer-links {
 		width: 50%;
 		float: left;
@@ -1103,6 +1121,12 @@ p.span a {
 	}
 }
 @media screen and (max-width: 640px) {
+
+	.autho{
+		margin-top: 10em;
+		margin-bottom:26em;
+	}
+
 	.editors-pic-grids {
 		width: 70%;
 	}
@@ -1188,6 +1212,12 @@ p.span a {
 	}
 }
 @media screen and (max-width: 480px) {
+
+	.autho{
+		margin-top: 17.1em;
+		margin-bottom:26em;
+	}
+
 	.editors-pic-grids {
 		width: 100%;
 		border-right:none;
@@ -1313,6 +1343,12 @@ p.span a {
 	}
 }
 @media screen and (max-width: 320px) {
+
+	.autho{
+		margin-top: 10em;
+		margin-bottom:26em;
+	}
+
 	.type {
 		width: 42%;
 		margin-top: 5px;
@@ -1459,4 +1495,5 @@ p.span a {
 	.cmnts-right a {
 		padding: 4px 10px;
 	}
+
 }

@@ -21,6 +21,8 @@
 					<p class="ptext">{{ $article->text }}</p>
 				</div>
 
+
+
 			</div>
 				<div class="single">
 				<div class="leave">

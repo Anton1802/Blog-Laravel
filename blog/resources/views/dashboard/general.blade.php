@@ -26,12 +26,16 @@
       </div>
     </div>
     @if (Session::has('warning'))
-    <div class="alert alert-danger">
+    <div class="alert alert-danger text-center">
       {{ Session::get('warning') }}
     </div>
     @endif
     <div class="col-auto">
+      @if(!Auth::user()->isAdmin())
       <h5 class="text-center">Мои статьи</h5>
+      @elseif(Auth::user()->isAdmin())
+      <h5 class="text-center">Управление статьями</h5>
+      @endif
       <div class="table-responsive" style="height: 700px;">
     <table class="table text-center table-info table-bordered">
       <thead>
@@ -39,10 +43,11 @@
           <th>Имя статьи</th>
           <th>Категория</th>
           <th>Кол.просмотров</th>
-          <th scope="row">Действия</th>
+          <th>Действия</th>
         </tr>
       </thead>
       <tbody>
+        @if(!Auth::user()->isAdmin())
         @foreach($user_article as $article)
         <tr>
           <td>{{ $article->title }}</td>
@@ -56,13 +61,39 @@
               <div class="col-auto mt-2">
               <a class="btn btn-danger btn-sm" href="dashboard/del/{{ $article->id }}">Удалить</a>
               </div>
+              @if($article->watch_ready == false)
               <div class="col-auto mt-2">
-              <a class="btn btn-success btn-sm" href="dashboard/ready/{{ $article->id }}">Показать</a>
+              <a class="btn btn-success btn-sm" href="dashboard/ready/{{ $article->id }}">Опубликовать</a>
               </div>
+              @endif
             </div>
           </th>
         </tr>
         @endforeach
+        @elseif(Auth::user()->isAdmin())
+        @foreach($all_article as $article)
+        <tr>
+          <td>{{ $article->title }}</td>
+          <td>{{ $article->find($article->id_category)->nameCategory()->first()['name'] }}</td>
+          <td>{{ $article->views }}</td>
+          <th>
+            <div class="row justify-content-center">
+              <div class="col-auto mt-2">
+              <a class="btn btn-primary btn-sm" href="dashboard/edit/{{ $article->id }}">Редактир</a>
+              </div>
+              <div class="col-auto mt-2">
+              <a class="btn btn-danger btn-sm" href="dashboard/del/{{ $article->id }}">Удалить</a>
+              </div>
+              @if($article->watch_ready == false)
+              <div class="col-auto mt-2">
+              <a class="btn btn-success btn-sm" href="dashboard/ready/{{ $article->id }}">Опубликовать</a>
+              </div>
+              @endif
+            </div>
+          </th>
+        </tr>
+        @endforeach
+        @endif
           </tbody>
         </table>
       </div>

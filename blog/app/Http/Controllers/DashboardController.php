@@ -15,10 +15,34 @@ class DashboardController extends Controller
     {
 
       return view('dashboard.general', [
-          'user_article' => Article::where('user_id', Auth::id())->get()
+          'user_article' => Article::where('user_id', Auth::id())->get(),
+          'all_article' => Article::all()
       ]);
 
     }
 
+    public function del($id)
+    {
+
+        Article::where('id', $id)->delete();
+
+        return redirect('dashboard');
+
+    }
+
+    public function edit()
+    {
+
+
+
+    }
+
+    public function ready($id)
+    {
+        $watch_ready = Article::where('id', $id)->first()['watch_ready'];
+        Article::where('id', $id)->update(['watch_ready' => '1']);
+        return redirect('dashboard');
+
+    }
 
 }

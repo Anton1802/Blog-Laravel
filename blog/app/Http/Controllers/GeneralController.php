@@ -14,7 +14,7 @@ class GeneralController extends Controller
     {
 
       return view('general',[
-          'articles'         => Article::simplePaginate(2),
+          'articles'         => Article::where('watch_ready', true)->simplePaginate(2),
           'categories'       => $this->getCategoryAll(),
           'popular_articles' => $this->getPopularArticles(),
           'rec_articles'     => $this->getRecomendedArticles()
@@ -45,7 +45,7 @@ class GeneralController extends Controller
     {
 
         $avg = floor(Article::avg('views'));
-        $popular_articles = Article::where('views', '>=', $avg)->take(4)->get();
+        $popular_articles = Article::where('views', '>=', $avg)->where('watch_ready', true)->take(4)->get();
         return $popular_articles;
 
     }
@@ -53,7 +53,7 @@ class GeneralController extends Controller
     public function getRecomendedArticles()
     {
 
-      $rec_articles = Article::where('recommended', true)->take(4)->get();
+      $rec_articles = Article::where('recommended', true)->where('watch_ready', true)->take(4)->get();
       return $rec_articles;
 
     }

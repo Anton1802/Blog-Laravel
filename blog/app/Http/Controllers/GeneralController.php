@@ -13,16 +13,11 @@ class GeneralController extends Controller
     public function getAll()
     {
 
-      $articles = $this->getArticlesAll();
-      $categories = $this->getCategoryAll();
-      $popular_articles = $this->getPopularArticles();
-      $rec_articles = $this->getRecomendedArticles();
-
       return view('general',[
-          'articles' => $articles,
-          'categories' => $categories,
-          'popular_articles' => $popular_articles,
-          'rec_articles' => $rec_articles
+          'articles'         => Article::simplePaginate(2),
+          'categories'       => $this->getCategoryAll(),
+          'popular_articles' => $this->getPopularArticles(),
+          'rec_articles'     => $this->getRecomendedArticles()
       ]);
 
     }
@@ -30,25 +25,12 @@ class GeneralController extends Controller
     public function getArticlesIdCategory($idCategory)
     {
 
-        $articles = Article::where('id_category', $idCategory)->simplePaginate(2);
-        $categories = $this->getCategoryAll();
-        $popular_articles = $this->getPopularArticles();
-        $rec_articles = $this->getRecomendedArticles();
-
         return view('general',[
-            'articles' => $articles,
-            'categories' => $categories,
-            'popular_articles' => $popular_articles,
-            'rec_articles' => $rec_articles
+            'articles' => Article::where('id_category', $idCategory)->simplePaginate(2),
+            'categories' => $this->getCategoryAll(),
+            'popular_articles' => $this->getPopularArticles(),
+            'rec_articles' => $this->getRecomendedArticles()
         ]);
-
-    }
-
-    public function getArticlesAll()
-    {
-
-        $articles = Article::simplePaginate(2);
-        return $articles;
 
     }
 

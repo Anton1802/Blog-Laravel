@@ -29,7 +29,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <li><a href="/contact">Контакты</a></li>
         @if(!Auth::check())
         <li><a href="{{ route('login') }}">Войти</a></li>
-        <li><a class="active" href="{{ route('login') }}">Регистрация</a></li>
+        <li><a class="active" href="{{ route('register') }}">Регистрация</a></li>
         @endif
         @if(Auth::check())
         <li><a href="{{ route('dashboard') }}">Панель управления</a></li>
@@ -40,7 +40,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="clearfix"></div>
   </div>
 </div>
-@if(Route::is('home'))
+@if(Route::is('home') || Route::is('cat'))
 <div class="container">
   <div class="header-bottom">
         <div class="type">

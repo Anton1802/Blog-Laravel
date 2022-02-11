@@ -10,7 +10,7 @@ use App\Http\Controllers\DashboardController;
 
 
 Route::get('/', [GeneralController::class, 'getAll'])->name('home');
-Route::get('/category/{idCategory}', [GeneralController::class, 'getArticlesIdCategory'])->name('category');
+Route::get('/category/{idCategory}', [GeneralController::class, 'getArticlesIdCategory'])->name('cat');
 
 
 Route::get('/single/{idArticle}', [SingleController::class, 'getSingle'])->name('single');

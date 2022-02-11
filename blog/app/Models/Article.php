@@ -9,4 +9,12 @@ class Article extends Model
 {
     use HasFactory;
 
+    public function nameCategory()
+        {
+
+             return $this->hasOne('App\Models\Category', 'id', 'id_category');
+
+        }
+
+
 }

@@ -25,8 +25,9 @@
       </div>
     </div>
     <div class="col-auto">
+      <h5 class="text-center">Мои статьи</h5>
       <div class="table-responsive" style="height: 500px;">
-    <table class="table">
+    <table class="table text-center">
       <thead>
         <tr>
           <th>Имя статьи</th>
@@ -35,26 +36,13 @@
         </tr>
       </thead>
       <tbody>
+        @foreach($user_article as $article)
         <tr>
-          <td>Test Article</td>
-          <td>Принтеры</td>
-          <td>15 просмотров</td>
+          <td>{{ $article->title }}</td>
+          <td>{{ $article->find($article->id_category)->nameCategory()->first()['name'] }}</td>
+          <td>{{ $article->views }}</td>
         </tr>
-        <tr>
-          <td>Test Article</td>
-          <td>Принтеры</td>
-          <td>15 просмотров</td>
-        </tr>
-        <tr>
-          <td>Test Article</td>
-          <td>Принтеры</td>
-          <td>15 просмотров</td>
-        </tr>
-        <tr>
-          <td>Test Article</td>
-          <td>Принтеры</td>
-          <td>15 просмотров</td>
-        </tr>
+        @endforeach
       </tbody>
     </table>
   </div>

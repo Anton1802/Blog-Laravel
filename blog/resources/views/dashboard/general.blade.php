@@ -12,7 +12,7 @@
 <div class="card bg-info">
   <div class="card-body">
     <h5 class="card-title">Комментарии:</h5>
-    <p class="card-text">Вы оставили 9 комментарий(ев).</p>
+    <p class="card-text">Вы оставили {{ $count_comments }} комментарий(ев).</p>
             </div>
           </div>
         </div>

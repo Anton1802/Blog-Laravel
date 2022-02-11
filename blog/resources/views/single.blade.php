@@ -26,7 +26,9 @@
 			</div>
 				<div class="single">
 				<div class="leave">
+				@if(Auth::check())
 				<h4>Оставить комментарий</h4>
+				@endif
 				</div>
 
 				<!-- Вывод сообщения об ошибках -->
@@ -34,15 +36,9 @@
 				@include('errors.error')
 				@endif
 
+				@if(Auth::check())
 				<form id="commentform" action="/comment" method="POST">
 					@csrf
-				     <p class="comment-form-author-name"><label for="author">Ваше имя</label>
-						<input id="author" name="author" type="text" value="" size="30" aria-required="true">
-					 </p>
-					 <p class="comment-form-email">
-						<label for="email">Почта</label>
-						<input id="email" name="email" type="text" value="" size="30" aria-required="true">
-					 </p>
 					 <p class="comment-form-url">
 						<label for="url">Веб-сайт</label>
 						<input id="url" name="url" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '')">
@@ -57,6 +53,7 @@
 					</p>
 					<div class="clearfix"></div>
 				   </form>
+					 @endif
 
 				   	<div class="comments1">
 								@if($comments->isNotEmpty())

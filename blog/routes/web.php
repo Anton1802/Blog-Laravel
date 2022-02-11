@@ -36,8 +36,8 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register_process', [RegisterController::class, 'reg'])->name('register_process');
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-Route::get('/dashboard/add', [DashboardController::class, 'add'])->name('dashboard_add');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
+Route::get('/dashboard/add', [DashboardController::class, 'add'])->name('dashboard_add')->middleware('auth');
 
 Route::group(['middleware' => 'admin'], function () {
     Route::get('/dashboard/del/{id}', [DashboardController::class, 'del'])->name('dashboard_del');

@@ -25,8 +25,6 @@ class CommentRequest extends FormRequest
     {
         return [
             'text' => 'required|min:10|max:255',
-            'author' => 'required|min:2|max:10',
-            'email' => 'email',
             'web_site' => 'min:5|max:20'
         ];
     }
@@ -37,8 +35,6 @@ class CommentRequest extends FormRequest
       return[
 
           'text' => 'Комментарий',
-          'author' => 'Имя',
-          'email' => 'Почта',
           'web_site' => 'Веб-сайт'
 
         ];

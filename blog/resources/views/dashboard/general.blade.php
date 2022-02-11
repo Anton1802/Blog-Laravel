@@ -25,6 +25,11 @@
         </div>
       </div>
     </div>
+    @if (Session::has('warning'))
+    <div class="alert alert-danger">
+      {{ Session::get('warning') }}
+    </div>
+    @endif
     <div class="col-auto">
       <h5 class="text-center">Мои статьи</h5>
       <div class="table-responsive" style="height: 700px;">
@@ -46,13 +51,13 @@
           <th>
             <div class="row justify-content-center">
               <div class="col-auto mt-2">
-              <a class="btn btn-primary btn-sm" href="">Редактир</a>
+              <a class="btn btn-primary btn-sm" href="dashboard/edit/{{ $article->id }}">Редактир</a>
               </div>
               <div class="col-auto mt-2">
-              <a class="btn btn-danger btn-sm" href="">Удалить</a>
+              <a class="btn btn-danger btn-sm" href="dashboard/del/{{ $article->id }}">Удалить</a>
               </div>
               <div class="col-auto mt-2">
-              <a class="btn btn-success btn-sm" href="">Показать</a>
+              <a class="btn btn-success btn-sm" href="dashboard/ready/{{ $article->id }}">Показать</a>
               </div>
             </div>
           </th>

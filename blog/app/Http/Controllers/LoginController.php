@@ -29,7 +29,7 @@ class LoginController extends Controller
         {
 
             $request->session()->regenerate();
-
+            
             return redirect()->intended('/');
 
         }
@@ -49,7 +49,7 @@ class LoginController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');        
+        return redirect('/');
 
     }
 

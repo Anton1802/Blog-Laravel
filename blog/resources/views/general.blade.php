@@ -12,7 +12,6 @@
 <div class="content">
 <div class="col-md-7 content-left">
   <h5 class="head">последние новости</h5>
-  @if(Route::is('home') && $articles != "")
   @foreach($articles as $article)
   <div class="article">
     <h6></h6>
@@ -21,7 +20,6 @@
     <p>{{ $article->text }}</p>
   </div>
   @endforeach
-  @endif
 </div>
 <div class="col-md-5 content-right">
 <h5 class="head">популярные</h5>

@@ -7,32 +7,34 @@
 @section('content')
 
 <div class="container mt-3">
-  <div class="row">
-    <div class="col-auto">
-<div class="card" style="width: 18rem;">
+  <div class="row align-items-center pb-5">
+    <div class="col-12">
+<div class="card bg-info">
   <div class="card-body">
     <h5 class="card-title">Комментарии:</h5>
     <p class="card-text">Вы оставили 9 комментарий(ев).</p>
             </div>
           </div>
         </div>
-        <div class="col-auto">
-          <div class="card" style="width: 18rem;">
+        <div class="col-12">
+          <div class="card bg-info mt-2">
             <div class="card-body">
               <h5 class="card-title">Статьи:</h5>
-              <p class="card-text">Вы написали 9 статья(ей).</p>
+              <p class="card-text">Вы написали {{ $user_article->count() }} статья(ей).</p>
+            </div>
         </div>
       </div>
     </div>
     <div class="col-auto">
       <h5 class="text-center">Мои статьи</h5>
-      <div class="table-responsive" style="height: 500px;">
-    <table class="table text-center">
+      <div class="table-responsive" style="height: 700px;">
+    <table class="table text-center table-info table-bordered">
       <thead>
         <tr>
           <th>Имя статьи</th>
           <th>Категория</th>
           <th>Кол.просмотров</th>
+          <th scope="row">Действия</th>
         </tr>
       </thead>
       <tbody>
@@ -41,13 +43,23 @@
           <td>{{ $article->title }}</td>
           <td>{{ $article->find($article->id_category)->nameCategory()->first()['name'] }}</td>
           <td>{{ $article->views }}</td>
+          <th>
+            <div class="row justify-content-center">
+              <div class="col-auto mt-2">
+              <a class="btn btn-primary btn-sm" href="">Редактир</a>
+              </div>
+              <div class="col-auto mt-2">
+              <a class="btn btn-danger btn-sm" href="">Удалить</a>
+              </div>
+              <div class="col-auto mt-2">
+              <a class="btn btn-success btn-sm" href="">Показать</a>
+              </div>
+            </div>
+          </th>
         </tr>
         @endforeach
-      </tbody>
-    </table>
-  </div>
-</div>
-
-
+          </tbody>
+        </table>
+      </div>
 
 @endsection

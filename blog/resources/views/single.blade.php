@@ -61,9 +61,7 @@
 								@endif
 								@foreach($comments as $com)
 			  				<div class="comments-main">
-									<div class="col-md-3 cmts-main-left">
-										<img src="{{asset('images/avatar.jpg')}}" alt="">
-									</div>
+								 <img src="{{asset('images/avatar.jpg')}}" class="img-fluid" alt="...">
 									<div class="col-md-9 cmts-main-right">
 										<h5>{{ $com->username }}</h5>
 										<p>{{ $com->text }}</p>

@@ -87,11 +87,11 @@ sub {
   bottom: -.25em;
 }
 img {
-  border: 0;
+  border: 0px;
 }
 svg:not(:root) {
   overflow: hidden;
-  
+
 }
 figure {
   margin: 1em 40px;
@@ -309,6 +309,8 @@ figure {
   margin: 0;
 }
 img {
+  padding-left: 5px;
+  padding-bottom: 10px;
   vertical-align: middle;
 }
 .img-responsive,

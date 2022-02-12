@@ -8,9 +8,12 @@ use App\Models\Article;
 use App\Models\Category;
 use App\Models\Comment;
 use App\Models\User;
+use Intervention\Image\Facades\Image;
+
 
 class DashboardController extends Controller
 {
+
     public function index()
     {
 
@@ -31,10 +34,36 @@ class DashboardController extends Controller
 
     }
 
-    public function edit()
+    public function edit($id, Request $request)
     {
 
+        if($request->isMethod('get'))
+        {
 
+            $article = Article::where('id', $id)->first();
+
+            return view('dashboard.edit', [
+                'article' => $article
+            ]);
+
+        }
+
+                    if($request->isMethod('post'))
+                    {
+
+                        $title = $request->input('title');
+                        $text = $request->input('text');
+
+                        Article::where('id', $id)->update([
+
+                            'title' => $title,
+                            'text' => $text
+
+                        ]);
+
+                        return redirect('dashboard');
+
+                    }
 
     }
 
@@ -92,6 +121,11 @@ class DashboardController extends Controller
         $text = $request->input('text');
 
         $image->move(public_path() . '/images/', $image->getClientOriginalName() );
+
+        $thumbnail = Image::make(public_path() . '/images/' . $image->getClientOriginalName());
+        $thumbnail->fit(700, 300);
+        $thumbnail->save(public_path() . '/images/' . $image->getClientOriginalName());
+
 
         Article::insert([
             'title' => $title,

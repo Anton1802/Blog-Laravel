@@ -17,7 +17,7 @@
     <h6></h6>
     <a class="title" href="/single/{{ $article->id }}">{{ $article->title}}</a>
     <a href="/single/{{ $article->id }}"><img src="{{ asset($article->path_img) }}" alt="" /></a>
-    <p>{{ $article->text }}</p>
+    <p>{{ Str::substr($article->text, 0, 300)}}...</p>
   </div>
   @endforeach
 </div>
@@ -46,7 +46,7 @@
         <a href="/single/{{ $article->id }}"><img src="{{ asset($article->path_img) }}" alt="" /></a>
       </div>
       <div class="e-pic-info">
-        <a href="/single/{{ $article->id }}">{{ $article->title }}</a>
+        <a href="/single/{{ $article->id }}">{{ Str::substr($article->title, 0, 20)}}</a>
         <span></span>
         <label>Дата: {{ $article->created_at }}</label>
       </div>

@@ -905,9 +905,11 @@ p.span a {
 .features-list ul {
 	margin-left:1em;
 }
+
 .cmts-main-left img {
 	width: 100%;
 }
+
 /*-- responsive-design starts-here --*/
 
 @media screen and (max-width: 1024px) {
@@ -1120,6 +1122,7 @@ p.span a {
 	.single-page {
 		padding: 2em;
 	}
+
 }
 @media screen and (max-width: 640px) {
 
@@ -1495,6 +1498,10 @@ p.span a {
 	}
 	.cmnts-right a {
 		padding: 4px 10px;
+	}
+
+	.image{
+		padding-left: 5px;
 	}
 
 }

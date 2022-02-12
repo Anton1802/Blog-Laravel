@@ -44,6 +44,7 @@ Route::post('/dashboard/add_process', [DashboardController::class, 'add'])->name
 Route::group(['middleware' => 'admin'], function () {
     Route::get('/dashboard/del/{id}', [DashboardController::class, 'del'])->name('dashboard_del');
     Route::get('/dashboard/edit/{id}', [DashboardController::class, 'edit'])->name('dashboard_edit');
+    Route::post('/dashboard/edit/{id}', [DashboardController::class, 'edit'])->name('dashboard_edit_use');
     Route::get('/dashboard/ready/{id}', [DashboardController::class, 'ready'])->name('dashboard_ready');
     Route::get('/dashboard/recommend/{id}', [DashboardController::class, 'rec'])->name('dashboard_recommend');
     });

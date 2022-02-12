@@ -26,7 +26,7 @@ class GeneralController extends Controller
     {
 
         return view('general',[
-            'articles' => Article::where('id_category', $idCategory)->simplePaginate(2),
+            'articles' => Article::where('id_category', $idCategory)->where('watch_ready', true)->simplePaginate(2),
             'categories' => $this->getCategoryAll(),
             'popular_articles' => $this->getPopularArticles(),
             'rec_articles' => $this->getRecomendedArticles()

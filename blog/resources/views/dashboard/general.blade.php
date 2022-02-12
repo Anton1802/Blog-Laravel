@@ -76,6 +76,13 @@
           <td>{{ $article->find($article->id_category)->nameCategory()->first()['name'] }}</td>
           <td>{{ $article->views }}</td>
           <th>
+              <div class="row justify-content-center">
+              <div class="col-auto mt-2">
+              <a class="btn btn-primary btn-sm" href="dashboard/edit/{{ $article->id }}">Редактир</a>
+              </div>
+              <div class="col-auto mt-2">
+              <a class="btn btn-danger btn-sm" href="dashboard/del/{{ $article->id }}">Удалить</a>
+              </div>
               @if($article->watch_ready == false)
               <div class="col-auto mt-2">
               <a class="btn btn-success btn-sm" href="dashboard/ready/{{ $article->id }}">Опубликовать</a>

@@ -37,10 +37,13 @@ Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register_process', [RegisterController::class, 'reg'])->name('register_process');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
+
 Route::get('/dashboard/add', [DashboardController::class, 'add'])->name('dashboard_add')->middleware('auth');
+Route::post('/dashboard/add_process', [DashboardController::class, 'add'])->name('dashboard_add_process')->middleware('auth');
 
 Route::group(['middleware' => 'admin'], function () {
     Route::get('/dashboard/del/{id}', [DashboardController::class, 'del'])->name('dashboard_del');
     Route::get('/dashboard/edit/{id}', [DashboardController::class, 'edit'])->name('dashboard_edit');
     Route::get('/dashboard/ready/{id}', [DashboardController::class, 'ready'])->name('dashboard_ready');
+    Route::get('/dashboard/recommend/{id}', [DashboardController::class, 'rec'])->name('dashboard_recommend');
     });

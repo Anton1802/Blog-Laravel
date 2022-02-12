@@ -46,15 +46,65 @@ class DashboardController extends Controller
 
     }
 
-// Форма добавления статьи - доступна всем
-// Поля: Фото, заголовок, текст
-// Кнопка: Отправить на рассмотрение
-
-    public function add()
+    public function rec($id)
     {
 
+        $recommended = Article::where('id', $id)->first()['recommended'];
+        if($recommended == false)
+        Article::where('id', $id)->update(['recommended' => '1' ]);
+        else if($recommended == true)
+        Article::where('id', $id)->update(['recommended' => '0' ]);
 
+        return redirect('dashboard');
 
+    }
+
+    public function add(Request $request)
+    {
+
+        if($request->isMethod('get'))
+        {
+        return view('dashboard.add', [
+
+            'categories' => Category::get()
+
+        ]);
+        }
+
+        if($request->isMethod('post'))
+        {
+
+            $validated = $request->validate([
+            'title' => 'required|min:5',
+            'text' => 'required',
+            'image.*' => 'required|file|mimes:jpg,png,jpeg|max:10000'
+        ], [] ,[
+
+            'title' => 'Заголовок',
+            'text' => 'Текст',
+            'image' => 'Фото'
+
+        ]);
+
+        $image = $request->image;
+        $category = $request->input('category');
+        $title = $request->input('title');
+        $text = $request->input('text');
+
+        $image->move(public_path() . '/images/', $image->getClientOriginalName() );
+
+        Article::insert([
+            'title' => $title,
+            'text' => $text,
+            'path_img' => 'images/' . $image->getClientOriginalName(),
+            'id_category' => $category,
+            'user_id' => Auth::user()->id
+        ]);
+
+        session()->flash('success', 'Спасибо! Статья будет опубликована, после проверки!');
+        return redirect('dashboard');
+
+        }
     }
 
 }

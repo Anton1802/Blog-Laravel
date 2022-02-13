@@ -25,7 +25,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
     <div class="navigation">
       <ul>
-        <li><a href="/about">О нас</a></li>
         <li><a href="/contact">Контакты</a></li>
         @if(!Auth::check())
         <li><a href="{{ route('login') }}">Войти</a></li>

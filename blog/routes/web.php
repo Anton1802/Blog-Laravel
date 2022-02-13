@@ -17,10 +17,6 @@ Route::get('/category/{idCategory}', [GeneralController::class, 'getArticlesIdCa
 Route::get('/single/{idArticle}', [SingleController::class, 'getSingle'])->name('single');
 Route::post('/comment/{idArticle}', [SingleController::class, 'createComment'])->name('single');
 
-Route::get('/about', function () {
-    return view('about');
-});
-
 Route::get('/contact', function () {
     return view('contact');
 });

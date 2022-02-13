@@ -13,9 +13,14 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/jquery.min.js', 'public/js');
 
-mix.copy('resources/css/bootstrap.css', 'public/css');
+
+
+mix.copy('resources/css/bootstrap.css', 'public/css')
+      .copy('resources/js/slider.js', 'public/js');
+
 
 mix.postCss('resources/css/style.css', 'public/css');
 
 mix.copyDirectory('resources/images', 'public/images')
-      .copyDirectory('resources/fonts', 'public/fonts');
+      .copyDirectory('resources/fonts', 'public/fonts')
+       .copyDirectory('resources/slick', 'public/slick');

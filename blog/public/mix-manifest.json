@@ -2,6 +2,7 @@
     "/js/jquery.min.js": "/js/jquery.min.js",
     "/css/style.css": "/css/style.css",
     "/css/bootstrap.css": "/css/bootstrap.css",
+    "/js/slider.js": "/js/slider.js",
     "/images/a1.jpg": "/images/a1.jpg",
     "/images/a2.jpg": "/images/a2.jpg",
     "/images/abt_pic.jpg": "/images/abt_pic.jpg",
@@ -24,5 +25,15 @@
     "/fonts/Antonio-Regular.ttf": "/fonts/Antonio-Regular.ttf",
     "/fonts/Georgia Italic.ttf": "/fonts/Georgia Italic.ttf",
     "/fonts/SIL Open Font License.txt": "/fonts/SIL Open Font License.txt",
-    "/fonts/Times-Italic.ttf": "/fonts/Times-Italic.ttf"
+    "/fonts/Times-Italic.ttf": "/fonts/Times-Italic.ttf",
+    "/slick/ajax-loader.gif": "/slick/ajax-loader.gif",
+    "/slick/config.rb": "/slick/config.rb",
+    "/slick/slick-theme.css": "/slick/slick-theme.css",
+    "/slick/slick-theme.less": "/slick/slick-theme.less",
+    "/slick/slick-theme.scss": "/slick/slick-theme.scss",
+    "/slick/slick.css": "/slick/slick.css",
+    "/slick/slick.js": "/slick/slick.js",
+    "/slick/slick.less": "/slick/slick.less",
+    "/slick/slick.min.js": "/slick/slick.min.js",
+    "/slick/slick.scss": "/slick/slick.scss"
 }

@@ -48,56 +48,47 @@
           <th>Имя статьи</th>
           <th>Категория</th>
           <th>Кол.просмотров</th>
-          <th>Действия</th>
+          <th style="width: 100px; @if(!Auth::user()->isAdmin()) display:none; @endif">Действия</th>
         </tr>
       </thead>
       <tbody>
         @if(!Auth::user()->isAdmin())
         @foreach($user_article as $article)
         <tr>
-          <td>{{ $article->title }}</td>
+          <td class="text-truncate">{{ $article->title }}</td>
           <td>{{ $article->find($article->id_category)->nameCategory()->first()['name'] }}</td>
           <td>{{ $article->views }}</td>
-          <th>
-            <div class="row justify-content-center">
-              <div class="col-auto mt-2">
-              <a class="btn btn-primary btn-sm" href="dashboard/edit/{{ $article->id }}">Редактир</a>
-              </div>
-              <div class="col-auto mt-2">
-              <a class="btn btn-danger btn-sm" href="dashboard/del/{{ $article->id }}">Удалить</a>
-              </div>
           </th>
         </tr>
         @endforeach
         @elseif(Auth::user()->isAdmin())
         @foreach($all_article as $article)
         <tr>
-          <td>{{ $article->title }}</td>
+          <td class="text-truncate">{{ $article->title }}...</td>
           <td>{{ $article->find($article->id_category)->nameCategory()->first()['name'] }}</td>
           <td>{{ $article->views }}</td>
           <th>
-              <div class="row justify-content-center">
-              <div class="col-auto mt-2">
-              <a class="btn btn-primary btn-sm" href="dashboard/edit/{{ $article->id }}">Редактир</a>
+            <div class="sl" style="width:120px">
+              <div class="slide">
+                <a class="btn btn-primary btn-sm" href="dashboard/edit/{{ $article->id }}">Редактир</a>
               </div>
-              <div class="col-auto mt-2">
-              <a class="btn btn-danger btn-sm" href="dashboard/del/{{ $article->id }}">Удалить</a>
+              <div class="slide">
+                  <a class="btn btn-danger btn-sm" href="dashboard/del/{{ $article->id }}">Удалить</a>
               </div>
               @if($article->watch_ready == false)
-              <div class="col-auto mt-2">
-              <a class="btn btn-success btn-sm" href="dashboard/ready/{{ $article->id }}">Опубликовать</a>
+              <div class="slide">
+                  <a class="btn btn-success btn-sm" href="dashboard/ready/{{ $article->id }}">Опубликовать</a>
               </div>
               @endif
-              <div class="col-auto mt-2">
-              <a class="btn @if($article->recommended == true) btn-success @else btn-danger @endif btn-sm" href="dashboard/recommend/{{ $article->id }}">Р</a>
+              <div class="slide">
+                  <a class="btn @if($article->recommended == true) btn-success @else btn-danger @endif btn-sm" href="dashboard/recommend/{{ $article->id }}">Р</a>
               </div>
-            </div>
-          </th>
-        </tr>
+          </div>
+        </th>
         @endforeach
         @endif
+          </tr>
           </tbody>
         </table>
       </div>
-
-@endsection
+      @endsection

@@ -6,6 +6,7 @@ use App\Http\Controllers\SingleController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ContactController;
 
 
 
@@ -17,13 +18,6 @@ Route::get('/category/{idCategory}', [GeneralController::class, 'getArticlesIdCa
 Route::get('/single/{idArticle}', [SingleController::class, 'getSingle'])->name('single');
 Route::post('/comment/{idArticle}', [SingleController::class, 'createComment'])->name('single');
 
-Route::get('/contact', function () {
-    return view('contact');
-});
-
-Route::get('/404', function () {
-    return view('404');
-});
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login_process', [LoginController::class, 'login'])->name('login_process');
@@ -36,6 +30,9 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 
 Route::get('/dashboard/add', [DashboardController::class, 'add'])->name('dashboard_add')->middleware('auth');
 Route::post('/dashboard/add_process', [DashboardController::class, 'add'])->name('dashboard_add_process')->middleware('auth');
+
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+Route::post('/contact/send', [ContactController::class, 'send'])->name('contact_send');
 
 Route::group(['middleware' => 'admin'], function () {
     Route::get('/dashboard/del/{id}', [DashboardController::class, 'del'])->name('dashboard_del');

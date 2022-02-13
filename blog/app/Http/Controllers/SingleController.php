@@ -40,22 +40,21 @@ class SingleController extends Controller
 
     }
 
-    public function createComment(CommentRequest $request)
+    public function createComment($idArticle, CommentRequest $request)
     {
 
-
-        $referer = $request->server('HTTP_REFERER');
-        $referer = substr($referer, -1);
 
         DB::table('comments')->insert([
             'text' => $request->input('text'),
             'username' => Auth::user()->name,
             'email' => Auth::user()->email,
             'web_site' => $request->input('url'),
-            'id_article' => $referer
+            'id_article' => $idArticle
         ]);
 
+
         return back()->withInput();
+
 
     }
 

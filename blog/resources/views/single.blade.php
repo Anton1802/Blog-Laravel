@@ -37,7 +37,7 @@
 				@endif
 
 				@if(Auth::check())
-				<form id="commentform" action="/comment" method="POST">
+				<form id="commentform" action="/comment/{{ $article->id }}" method="POST">
 					@csrf
 					 <p class="comment-form-url">
 						<label for="url">Веб-сайт</label>

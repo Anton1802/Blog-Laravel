@@ -18,7 +18,7 @@ class CreateCommentsTable extends Migration
             $table->text('text');
             $table->string('username');
             $table->string('email');
-            $table->string('web_site');
+            $table->string('web_site')->default(null);
             $table->integer('id_article');
             $table->timestamps();
         });

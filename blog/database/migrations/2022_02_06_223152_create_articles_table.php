@@ -18,11 +18,11 @@ class CreateArticlesTable extends Migration
             $table->string('title');
             $table->text('text');
             $table->string('path_img');
-            $table->integer('views');
+            $table->integer('views')->default(0);
             $table->integer('id_category');
-            $table->boolean('recommended')->default(0);
+            $table->boolean('recommended')->default(false);
             $table->integer('user_id');
-            $table->boolean('watch_ready');
+            $table->boolean('watch_ready')->default(false);
             $table->timestamps();
         });
     }

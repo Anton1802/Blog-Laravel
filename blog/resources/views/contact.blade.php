@@ -3,7 +3,6 @@
 Контакты
 @endsection
 
-
 @extends('index')
 @section('content')
 <title>Contact</title>

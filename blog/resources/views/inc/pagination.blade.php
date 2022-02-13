@@ -4,10 +4,10 @@
   <div>
   <ul class="pagination">
     @if(!$paginator->onFirstPage())
-    <li class="page-item"><a class="page-link" href="{{ $paginator->previousPageUrl() }}">Пред</a></li>
+    <li class="page-item"><a class="page-link" href="{{ $paginator->previousPageUrl() }}">Предыдущая</a></li>
     @endif
     @if($paginator->hasMorePages())
-    <li class="page-item"><a class="page-link" href="{{ $paginator->nextPageUrl() }}">След</a></li>
+    <li class="page-item"><a class="page-link" href="{{ $paginator->nextPageUrl() }}">Следующая</a></li>
     @endif
   </ul>
   </div>

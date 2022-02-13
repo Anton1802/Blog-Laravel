@@ -23,8 +23,8 @@ body{
     font-style: normal;
 }
 @font-face {
-    font-family: 'Antonio-Regular';
-    src: url(/fonts/Antonio-Regular.ttf?e560db7c85bc7d1591381a8296df4f63);
+    font-family: 'Montserrat';
+    src: url(/fonts/Montserrat-Light.ttf?f0963fd9968fbd54cc35e8f0107db8d5);
     font-weight: normal;
     font-style: normal;
 }
@@ -54,10 +54,12 @@ h1,h2,h3,h4,h5,h6{
 p{
 	margin:0;
 }
+
 ul{
-	margin:0;
+	margin:7;
 	padding:0;
 }
+
 label{
 	margin:0;
 }
@@ -83,7 +85,7 @@ label{
 	cursor: pointer;
 	font-weight: 400;
 	color: #fff;
-	font-family: 'Antonio-Regular';
+	font-family: 'Montserrat';
 }
 .pages ul li a.active {
 	border-bottom: 30px solid #1ac7c3;
@@ -119,7 +121,7 @@ label{
 	float:left;
 }
 .logo a h1 {
-    font-family: 'Antonio-Regular';
+    font-family: 'Montserrat';
 	text-transform:uppercase;
 	color:#fff;
 	font-size:3em;
@@ -176,7 +178,7 @@ h5.head {
 	font-size:1.35em;
 	text-transform:uppercase;
 	font-weight:300;
-	font-family: 'Antonio-Regular';
+	font-family: 'Montserrat';
 	background:#1ac7c3;
 	width:40%;
 	padding:7px;
@@ -188,7 +190,7 @@ h5.head {
 	font-size: 1.3em;
 	font-weight: 400;
 	margin-left: 1.8em;
-	font-family: 'Antonio-Regular';
+	font-family: 'Montserrat';
 	margin-top:3em;
 }
 a.title {
@@ -197,7 +199,7 @@ a.title {
 	text-decoration:none;
 	font-weight: 400;
 	margin: 0.85em 1.2em 0.9em 1.2em;
-	font-family: 'Antonio-Regular';
+	font-family: 'Montserrat';
 	display:block;
 	line-height: 1.25em;
 }
@@ -226,7 +228,7 @@ a.title {
 	color: #282828;
 	font-size: 1.85em;
 	font-weight: 400;
-	font-family: 'Antonio-Regular';
+	font-family: 'Montserrat';
 	display: block;
 	line-height: 1.25em;
 }
@@ -279,7 +281,7 @@ a.title {
 	font-size: 1.4em;
 	text-decoration: none;
 	font-weight: 400;
-	font-family: 'Antonio-Regular';
+	font-family: 'Montserrat';
 	display: block;
 	line-height:1.6em;
 	margin-top:10px;
@@ -302,7 +304,7 @@ a.title {
 	font-size: 1.35em;
 	text-transform: uppercase;
 	font-weight: 300;
-	font-family: 'Antonio-Regular';
+	font-family: 'Montserrat';
 	background: #000;
 	width: 40%;
 	padding: 7px;
@@ -326,7 +328,7 @@ a.title {
 	font-size: 1.3em;
 	text-transform: uppercase;
 	font-weight: 300;
-	font-family: 'Antonio-Regular';
+	font-family: 'Montserrat';
 	background: #000;
 	width: 12%;
 	padding: 9px;
@@ -337,7 +339,7 @@ a.title {
 	color: #fff;
 	font-size: 2.9em;
 	font-weight: 400;
-	font-family: 'Antonio-Regular';
+	font-family: 'Montserrat';
 	display: block;
 	width:60%;
 	line-height:1.4em;
@@ -616,7 +618,7 @@ a.bhead {
 	cursor: pointer;
 	font-weight: 400;
 	color: #000;
-	font-family: 'Antonio-Regular';
+	font-family: 'Montserrat';
 }
 a.bhead:hover {
 	  color: #1ac7c3;
@@ -747,7 +749,7 @@ p.span a {
 	color: #282828;
 	font-size: 1.85em;
 	font-weight: 400;
-	font-family: 'Antonio-Regular';
+	font-family: 'Montserrat';
 	display: block;
 	line-height: 1.25em;
 }
@@ -774,7 +776,7 @@ p.span a {
 	color: #282828;
 	font-size: 1.85em;
 	font-weight: 400;
-	font-family: 'Antonio-Regular';
+	font-family: 'Montserrat';
 	display: block;
 	line-height: 1.25em;
 }
@@ -868,7 +870,7 @@ p.span a {
 	color: #282828;
 	font-size: 1.85em;
 	font-weight: 400;
-	font-family: 'Antonio-Regular';
+	font-family: 'Montserrat';
 	display: block;
 	line-height: 1.25em;
 }
@@ -930,7 +932,7 @@ p.span a {
 	}
 	h5.head {
 		font-size: 1.3em;
-		width: 24%;
+		width: 40%;
 	}
 	.article h6 {
 		font-size: 1.25em;
@@ -960,7 +962,7 @@ p.span a {
 	}
 	.editors-pic-grids h5 {
 		font-size: 1.3em;
-		width: 55%;
+		width: 60%;
 		margin-top: 1em;
 	}
 	.e-pic-info a {
@@ -1233,7 +1235,7 @@ p.span a {
 	}
 	h5.head {
 		font-size: 1.1em;
-		width: 37%;
+		width: 40%;
 	}
 	.article h6 {
 		margin-top: 1.2em;
@@ -1373,7 +1375,7 @@ p.span a {
 	}
 	h5.head {
 		font-size: 1.05em;
-		width: 37%;
+		width: 50%;
 	}
 	.article h6 {
 		margin-top: 1em;

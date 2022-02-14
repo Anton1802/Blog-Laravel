@@ -18,7 +18,7 @@
     <a class="title" href="/single/{{ $article->id }}">{{ $article->title}}</a>
     <a href="/single/{{ $article->id }}"><img src="{{ asset($article->path_img) }}" alt="" /></a>
     <p>{{ Str::substr($article->text, 0, 300)}}...</p>
-    <p><b>{{ $article->views }} просмотров</b></p>
+    <p><b>{{ $article->views }} просмотр(ов)</b></p>
     <p>
       <b>Автор статьи: {{ $article->getNameAuthor($article->user_id) }}</b>
     </p>

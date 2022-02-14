@@ -106,7 +106,7 @@ class DashboardController extends Controller
             $validated = $request->validate([
             'title' => 'required|min:5',
             'text' => 'required',
-            'image.*' => 'required|file|mimes:jpg,png,jpeg|max:10000'
+            'image' => 'required|file|mimes:jpg,png,jpeg|max:10000'
         ], [] ,[
 
             'title' => 'Заголовок',

@@ -25,6 +25,17 @@ class GeneralController extends Controller
     public function getArticlesIdCategory($idCategory)
     {
 
+        if(Article::where('id_category', $idCategory)->where('watch_ready', true)->simplePaginate(2) == "")
+        {
+
+        return view('errors.empty',[
+            'categories' => $this->getCategoryAll(),
+            'popular_articles' => $this->getPopularArticles(),
+            'rec_articles' => $this->getRecomendedArticles()
+        ]);
+
+        }
+
         return view('general',[
             'articles' => Article::where('id_category', $idCategory)->where('watch_ready', true)->simplePaginate(2),
             'categories' => $this->getCategoryAll(),

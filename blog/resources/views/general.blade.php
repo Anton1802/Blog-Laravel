@@ -30,7 +30,7 @@
     <div class="editor text-center">
       <h3>{{ $article->title }}</h3>
       <p>{{ Str::substr($article->text, 0, 55)}}...</p>
-      <label> Дата: {{ $article->created_at }}</label>
+      <label>{{ $article->pastDate() }}</label>
       <span></span>
     </div>
   </a>
@@ -48,7 +48,7 @@
       <div class="e-pic-info">
         <a href="/single/{{ $article->id }}">{{ Str::substr($article->title, 0, 20)}}</a>
         <span></span>
-        <label>Дата: {{ $article->created_at }}</label>
+        <label>{{ $article->pastDate() }}</label>
       </div>
       <div class="clearfix"></div>
     </div>

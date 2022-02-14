@@ -28,6 +28,7 @@ class SingleController extends Controller
             'category' => $category,
             'comments' => $comments
         ]);
+        
 
 
     }

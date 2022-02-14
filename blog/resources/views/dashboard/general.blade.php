@@ -73,15 +73,15 @@
                 <a class="btn btn-primary btn-sm" href="dashboard/edit/{{ $article->id }}">Редактир</a>
               </div>
               <div class="slide">
-                  <a class="btn btn-danger btn-sm" href="dashboard/del/{{ $article->id }}">Удалить</a>
+                  <button class="btn btn-danger btn-sm" href="dashboard/del/{{ $article->id }}">Удалить</button>
               </div>
               @if($article->watch_ready == false)
               <div class="slide">
-                  <a class="btn btn-success btn-sm" href="dashboard/ready/{{ $article->id }}">Опубликовать</a>
+                  <button class="btn btn-success btn-sm" href="dashboard/ready/{{ $article->id }}">Опубликовать</button>
               </div>
               @endif
               <div class="slide">
-                  <a class="btn @if($article->recommended == true) btn-success @else btn-danger @endif btn-sm" href="dashboard/recommend/{{ $article->id }}">Р</a>
+                  <button id="{{ $article->id }}" class="btn rec @if($article->recommended == true) btn-success @else btn-danger @endif btn-sm" href="dashboard/recommend/{{ $article->id }}">Р</button>
               </div>
           </div>
         </th>

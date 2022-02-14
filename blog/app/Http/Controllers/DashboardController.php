@@ -80,11 +80,17 @@ class DashboardController extends Controller
 
         $recommended = Article::where('id', $id)->first()['recommended'];
         if($recommended == false)
+        {
         Article::where('id', $id)->update(['recommended' => '1' ]);
+        return 'rec btn-success';
+        }
         else if($recommended == true)
-        Article::where('id', $id)->update(['recommended' => '0' ]);
+        {
 
-        return redirect('dashboard');
+        Article::where('id', $id)->update(['recommended' => '0' ]);
+        return 'rec btn-danger';
+
+        }
 
     }
 

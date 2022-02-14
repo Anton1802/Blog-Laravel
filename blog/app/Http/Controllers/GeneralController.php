@@ -25,7 +25,9 @@ class GeneralController extends Controller
     public function getArticlesIdCategory($idCategory)
     {
 
-        if(Article::where('id_category', $idCategory)->where('watch_ready', true)->simplePaginate(2) == "")
+        $id_articles = Article::where('id_category', $idCategory)->where('watch_ready', true)->simplePaginate(2);
+
+        if($id_articles == "")
         {
 
         return view('errors.empty',[
@@ -36,12 +38,17 @@ class GeneralController extends Controller
 
         }
 
+        else
+        {
+
         return view('general',[
-            'articles' => Article::where('id_category', $idCategory)->where('watch_ready', true)->simplePaginate(2),
+            'articles' => $id_articles,
             'categories' => $this->getCategoryAll(),
             'popular_articles' => $this->getPopularArticles(),
             'rec_articles' => $this->getRecomendedArticles()
         ]);
+
+        }
 
     }
 

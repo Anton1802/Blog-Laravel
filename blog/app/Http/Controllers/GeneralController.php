@@ -25,7 +25,9 @@ class GeneralController extends Controller
     public function getArticlesIdCategory($idCategory)
     {
 
-        $id_articles = Article::where('id_category', $idCategory)->where('watch_ready', true)->simplePaginate(2);
+        $id_articles = Article::where('id_category', $idCategory)
+            ->where('watch_ready', true)
+            ->simplePaginate(2);
 
         if($id_articles == "")
         {

@@ -16,9 +16,11 @@
 					<img src="{{ asset($article->path_img) }}" class="img-responsive" alt="" />
 					<!-- Date -->
 					<!-- <p class="span">on february 14,2015</p> -->
-					<p class="span">Дата публикации: {{ $article->created_at }}</p>
+					<p><b>Дата публикации: {{ $article->created_at }}</b></p>
 					<!-- Text -->
 					<p class="ptext">{{ $article->text }}</p>
+					<p><b> Автор статьи: {{ $article->getNameAuthor($article->user_id) }} </b></p>
+					<p><b>{{ $article->views }} просмотров</b></p>
 				</div>
 
 

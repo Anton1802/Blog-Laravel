@@ -45,7 +45,7 @@ class Article extends Model
     public function getNameAuthor($id_user)
     {
 
-       return $this->find($id_user)->hasOne('App\Models\User', 'id', 'user_id')->first()['name'];
+       return $this->find($id_user)->hasOne('App\Models\User', 'id')->first()['name'];
 
 
     }

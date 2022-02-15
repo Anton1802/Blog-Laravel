@@ -65,3 +65,5 @@ $('.btn.ready').click(function(){
 })
 
 })
+
+$('#text').trumbowyg();

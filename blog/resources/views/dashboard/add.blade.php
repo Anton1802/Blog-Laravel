@@ -7,7 +7,6 @@
 <!-- // Форма добавления статьи - доступна всем
 // Поля: Фото, категория, заголовок, текст,
 // Кнопка: Отправить на рассмотрение -->
-
 @section('content')
 <div class="container pt-5">
   @if($errors->any())
@@ -34,7 +33,7 @@
   </div>
   <div class="form-group">
     <label for="exampleFormControlTextarea1" class="form-label">Текст:</label>
-     <textarea class="form-control" name="text" id="exampleFormControlTextarea1" rows="12"></textarea>
+     <textarea id="text" class="form-control" name="text" id="exampleFormControlTextarea1" rows="12"></textarea>
   </div>
   <button type="submit" class="btn btn-success mt-3">Отправить на модерацию</button>
   </form>

@@ -17,7 +17,7 @@
     <h6></h6>
     <a class="title" href="/single/{{ $article->id }}">{{ $article->title}}</a>
     <a href="/single/{{ $article->id }}"><img src="{{ asset($article->path_img) }}" alt="" /></a>
-    <p>{{ Str::substr($article->text, 0, 300)}}...</p>
+    <p>{{ strip_tags(html_entity_decode(Str::substr($article->text, 0, 300))) }}...</p>
     <p><b>{{ $article->views }} просмотр(ов)</b></p>
     <p>
       <b>Автор статьи: {{ $article->author['name'] }}</b>
@@ -34,7 +34,7 @@
   <a href="/single/{{ $article->id }}">
     <div class="editor text-center">
       <h3>{{ $article->title }}</h3>
-      <p>{{ Str::substr($article->text, 0, 55)}}...</p>
+      <p id="replace">{{ Str::substr($article->text, 0, 55)}}...</p>
       <label>{{ $article->pastDate() }}</label>
       <span></span>
     </div>
@@ -64,5 +64,13 @@
 </div>
 <div class="clearfix"></div>
 </div>
+
+<script>
+$('#replace').each(function(){
+	var $this = $(this);
+	var t = $this.text();
+	$this.html(t.replace('&lt','<').replace('&gt', '>'));
+});
+</script>
 
 @endsection

@@ -17,8 +17,11 @@
 					<!-- Date -->
 					<!-- <p class="span">on february 14,2015</p> -->
 					<p>Дата публикации: {{ $article->created_at }}</p>
+					<br>
 					<!-- Text -->
-					<p class="ptext">{{ $article->text }}</p>
+					<div id="replace" class="text">
+					{{ $article->text }}
+				  </div>
 					<p>Автор статьи: {{ $article->author['name'] }}</p>
 					<p>{{ $article->views }} просмотр(ов)</p>
 				</div>
@@ -84,5 +87,13 @@
 						</div>
 						</div>
 					</div>
+
+<script>
+$('#replace').each(function(){
+	var $this = $(this);
+	var t = $this.text();
+	$this.html(t.replace('&lt','<').replace('&gt', '>'));
+});
+</script>
 
 @endsection

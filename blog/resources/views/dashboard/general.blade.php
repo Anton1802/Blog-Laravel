@@ -37,12 +37,12 @@
     @endif
     <div class="col-auto">
       @if(!Auth::user()->isAdmin())
-      <h5 class="text-center">Мои статьи</h5>
+      <h5 class="text-center"  style="@if($user_article->count() == 0) display:none; @endif">Мои статьи</h5>
       @elseif(Auth::user()->isAdmin())
-      <h5 class="text-center">Управление статьями</h5>
+      <h5 class="text-center" style="@if($user_article->count() == 0) display:none; @endif">Управление статьями</h5>
       @endif
       <div class="table-responsive" style="height: 700px;">
-    <table class="table text-center table-info table-bordered">
+    <table class="table text-center table-info table-bordered" style="@if($user_article->count() == 0) display:none; @endif">
       <thead>
         <tr>
           <th>Имя статьи</th>

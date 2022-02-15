@@ -1,5 +1,5 @@
 @include('inc.header')
-<title>Категория пуста</title>
+<title>Пусто</title>
 			<div class="clearfix"></div>
         </div>
 	</div>

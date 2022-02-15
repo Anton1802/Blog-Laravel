@@ -76,12 +76,12 @@
                   <button class="btn btn-danger btn-sm del" id="{{ $article->id }}" href="dashboard/del/{{ $article->id }}">Удалить</button>
               </div>
               @if($article->watch_ready == false)
-              <div class="slide public" id="{{ $article->id }}">
-                  <button class="btn btn-success btn-sm public" id="{{ $article->id }}" href="dashboard/ready/{{ $article->id }}">Опубликовать</button>
+              <div class="slide" id="ready{{ $article->id }}">
+                  <button class="btn btn-success btn-sm ready" id="ready{{ $article->id }}" href="dashboard/ready/{{ $article->id }}">Опубликовать</button>
               </div>
               @endif
               <div class="slide">
-                  <button id="{{ $article->id }}" class="btn rec @if($article->recommended == true) btn-success @else btn-danger @endif btn-sm" href="dashboard/recommend/{{ $article->id }}">Р</button>
+                  <button id="rec{{$article->id }}" class="btn btn-sm rec @if($article->recommended == true) btn-success @else btn-danger @endif" href="dashboard/recommend/{{ $article->id }}">Р</button>
               </div>
           </div>
         </th>

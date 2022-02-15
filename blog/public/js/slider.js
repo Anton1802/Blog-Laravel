@@ -11,9 +11,9 @@ $('.btn.rec').click(function(){
     success: function(data)
     {
 
-      $(`button.btn.#${id}`).removeClass('btn-success');
-      $(`button.btn.#${id}`).removeClass('btn-danger');
-      $(`button.btn.#${id}`).addClass(data);
+      $(`#${id}`).removeClass('btn-success');
+      $(`#${id}`).removeClass('btn-danger');
+      $(`#${id}`).addClass(data);
 
     }
 
@@ -21,7 +21,7 @@ $('.btn.rec').click(function(){
 
 })
 
-$('.btn.public').click(function(){
+$('.btn.ready').click(function(){
 
   var link = $(this).attr("href");
   var id = $(this).prop("id");
@@ -32,8 +32,8 @@ $('.btn.public').click(function(){
     success: function(data)
     {
 
-      $(`.public.#${id}`).remove();
-      alert('Успешно опубликовано!');
+      $(`#${id}`).remove();
+      alert('Опубликовано!');
 
     }
 
@@ -57,7 +57,7 @@ $('.btn.public').click(function(){
 
         $(`.del#${id}`).remove();
         $(`.t#${id}`).remove();
-        alert('Успешно удалено');
+        alert('Удаление выполнено!');
 
 
       }

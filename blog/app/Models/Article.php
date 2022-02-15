@@ -13,7 +13,7 @@ class Article extends Model
     public function nameCategory()
         {
 
-             return $this->hasOne('App\Models\Category', 'id', 'id_category');
+             return $this->hasOne('App\Models\Category', 'id');
 
         }
 

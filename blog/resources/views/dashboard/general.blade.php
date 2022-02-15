@@ -56,7 +56,7 @@
         @foreach($user_article as $article)
         <tr>
           <td class="text-truncate">{{ $article->title }}</td>
-          <td>{{ $article->find($article->id_category)->nameCategory()->first()['name'] }}</td>
+          <td></td>
           <td>{{ $article->views }}</td>
           </th>
         </tr>
@@ -65,7 +65,7 @@
         @foreach($all_article as $article)
         <tr>
           <td class="text-truncate">{{ $article->title }}...</td>
-          <td>{{ $article->find($article->id_category)->nameCategory()->first()['name'] }}</td>
+          <td></td>
           <td>{{ $article->views }}</td>
           <th>
             <div class="sl" style="width:120px">
@@ -76,8 +76,8 @@
                   <button class="btn btn-danger btn-sm" href="dashboard/del/{{ $article->id }}">Удалить</button>
               </div>
               @if($article->watch_ready == false)
-              <div class="slide">
-                  <button class="btn btn-success btn-sm" href="dashboard/ready/{{ $article->id }}">Опубликовать</button>
+              <div class="slide public" id="{{ $article->id }}">
+                  <button class="btn btn-success btn-sm public" id="{{ $article->id }}" href="dashboard/ready/{{ $article->id }}">Опубликовать</button>
               </div>
               @endif
               <div class="slide">

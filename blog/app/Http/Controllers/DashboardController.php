@@ -71,7 +71,7 @@ class DashboardController extends Controller
     {
         $watch_ready = Article::where('id', $id)->first()['watch_ready'];
         Article::where('id', $id)->update(['watch_ready' => '1']);
-        return redirect('dashboard');
+        return 'success';
 
     }
 

@@ -22,10 +22,10 @@ class GeneralController extends Controller
 
     }
 
-    public function getArticlesIdCategory($idCategory)
+    public function getArticlesIdCategory($category_id)
     {
 
-        $id_articles = Article::where('id_category', $idCategory)
+        $id_articles = Article::where('category_id', $category_id)
             ->where('watch_ready', true)
             ->simplePaginate(2);
 

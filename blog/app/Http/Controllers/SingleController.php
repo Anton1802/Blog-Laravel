@@ -28,7 +28,7 @@ class SingleController extends Controller
             'category' => $category,
             'comments' => $comments
         ]);
-        
+
 
 
     }
@@ -36,7 +36,7 @@ class SingleController extends Controller
     public function getCategorySingle($article)
     {
 
-        $category = Category::where('id', $article->id_category)->first();
+        $category = Category::where('id', $article->category_id)->first();
         return $category;
 
     }

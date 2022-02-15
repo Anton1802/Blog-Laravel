@@ -19,7 +19,7 @@ class CreateArticlesTable extends Migration
             $table->text('text');
             $table->string('path_img');
             $table->integer('views')->default(0);
-            $table->integer('id_category');
+            $table->integer('category_id');
             $table->boolean('recommended')->default(false);
             $table->integer('user_id');
             $table->boolean('watch_ready')->default(false);

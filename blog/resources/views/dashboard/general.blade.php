@@ -55,8 +55,8 @@
         @if(!Auth::user()->isAdmin())
         @foreach($user_article as $article)
         <tr>
-          <td class="text-truncate">{{ $article->title }}</td>
-          <td></td>
+          <td>{{ $article->title }}</td>
+          <td>{{ $article->nameCategory($article->id) }}</td>
           <td>{{ $article->views }}</td>
           </th>
         </tr>
@@ -64,8 +64,8 @@
         @elseif(Auth::user()->isAdmin())
         @foreach($all_article as $article)
         <tr>
-          <td class="text-truncate">{{ $article->title }}...</td>
-          <td></td>
+          <td>{{ $article->title }}...</td>
+          <td>{{ $article->nameCategory($article->id) }}</td>
           <td>{{ $article->views }}</td>
           <th>
             <div class="sl" style="width:120px">

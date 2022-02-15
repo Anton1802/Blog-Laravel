@@ -10,10 +10,12 @@ class Article extends Model
 {
     use HasFactory;
 
-    public function nameCategory()
+    protected $table = 'articles';
+
+    public function nameCategory($id_category)
         {
 
-             return $this->hasOne('App\Models\Category', 'id');
+             return $this->find($id_category)->hasOne('App\Models\Category', 'id', 'category_id')->first()['name'];
 
         }
 
@@ -42,11 +44,10 @@ class Article extends Model
 
     }
 
-    public function getNameAuthor($id_user)
+    public function getNameAuthor($user)
     {
 
-       return $this->find($id_user)->hasOne('App\Models\User', 'id')->first()['name'];
-
+       return $this->find($user)->hasOne('App\Models\User', 'id', 'user_id')->first()['name'];
 
     }
 

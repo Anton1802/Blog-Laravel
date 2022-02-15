@@ -20,7 +20,7 @@
     <p>{{ Str::substr($article->text, 0, 300)}}...</p>
     <p><b>{{ $article->views }} просмотр(ов)</b></p>
     <p>
-      <b>Автор статьи: {{ $article->getNameAuthor($article->user_id) }}</b>
+      <b>Автор статьи: {{ $article->getNameAuthor($article->id) }}</b>
     </p>
   </div>
   @endforeach

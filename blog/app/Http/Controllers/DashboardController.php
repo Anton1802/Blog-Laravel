@@ -137,7 +137,7 @@ class DashboardController extends Controller
             'title' => $title,
             'text' => $text,
             'path_img' => 'images/' . $image->getClientOriginalName(),
-            'id_category' => $category,
+            'category_id' => $category,
             'user_id' => Auth::user()->id
         ]);
 

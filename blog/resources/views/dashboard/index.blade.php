@@ -15,4 +15,4 @@
 
 <script src="{{ asset('js/jquery.min.js') }}"></script>
 <script src="{{ asset('slick/slick.min.js') }}"></script>
-<script src="{{ asset('js/slider.js') }}"></script>
+<script src="{{ asset('js/script.js') }}"></script>

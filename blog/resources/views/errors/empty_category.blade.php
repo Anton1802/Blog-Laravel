@@ -8,7 +8,7 @@
 			<!--empty categories-->
 			<div class="error">
 				<div class="error-head">
-					<h3>Пусто!</h3>
+					<h3>Категория пуста!</h3>
 					<h2>Извините, статей нет!</h2>
 					<a class="hvr-bounce-to-left button" href="/">На главную</a>
 				 </div>

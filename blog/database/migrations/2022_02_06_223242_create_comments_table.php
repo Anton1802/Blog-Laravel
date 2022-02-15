@@ -20,7 +20,8 @@ class CreateCommentsTable extends Migration
             $table->string('email');
             $table->string('web_site')->default(null);
             $table->integer('id_article');
-            $table->timestamps();
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 

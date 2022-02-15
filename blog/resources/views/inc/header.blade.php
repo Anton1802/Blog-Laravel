@@ -41,6 +41,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 @if(Route::is('home') || Route::is('cat'))
 <div class="container">
+  @if(!$categories->count() == 0)
   <div class="header-bottom">
         <div class="type">
       <h5>Категории</h5>
@@ -48,13 +49,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <span class="menu"></span>
     <div class="list-nav">
       <ul>
-
         @foreach($categories as $category)
         <li><a href="/category/{{ $category->id }}">{{ $category->name }}</a></li>|
         @endforeach
-        @endif
       </ul>
     </div>
+    @endif
+    @endif
     <!-- script for menu -->
       <script>
       $( "span.menu" ).click(function() {

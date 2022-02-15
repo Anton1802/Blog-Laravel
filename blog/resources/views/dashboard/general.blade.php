@@ -77,7 +77,7 @@
               </div>
               @if($article->watch_ready == false)
               <div class="slide" id="ready{{ $article->id }}">
-                  <button class="btn btn-success btn-sm ready" id="ready{{ $article->id }}" href="dashboard/ready/{{ $article->id }}">Опубликовать</button>
+                  <button class="btn btn-success btn-sm ready" id="ready{{ $article->id }}" href="dashboard/ready/{{ $article->id }}">Публ</button>
               </div>
               @endif
               <div class="slide">

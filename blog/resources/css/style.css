@@ -897,6 +897,7 @@ p.span a {
 	color:#999;
 	font-weight: 600;
 	margin: 15px 0px;
+	white-space: nowrap;
 }
 .single-content-left {
 	padding:2.5em;
@@ -1120,6 +1121,7 @@ p.span a {
 	}
 	.cmnts-left p{
 		margin:0;
+		white-space: nowrap;
 	}
 	.single-page {
 		padding: 2em;
@@ -1497,6 +1499,7 @@ p.span a {
 	.cmnts-left p {
 		font-size: 9px;
 		margin-top:0.3em;
+		white-space: nowrap;
 	}
 	.cmnts-right a {
 		padding: 4px 10px;

@@ -23,7 +23,8 @@ class CreateArticlesTable extends Migration
             $table->boolean('recommended')->default(false);
             $table->integer('user_id');
             $table->boolean('watch_ready')->default(false);
-            $table->timestamps();
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 

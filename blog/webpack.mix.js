@@ -16,7 +16,7 @@ mix.js('resources/js/jquery.min.js', 'public/js');
 
 
 mix.copy('resources/css/bootstrap.css', 'public/css')
-      .copy('resources/js/slider.js', 'public/js');
+      .copy('resources/js/script.js', 'public/js');
 
 
 mix.postCss('resources/css/style.css', 'public/css');

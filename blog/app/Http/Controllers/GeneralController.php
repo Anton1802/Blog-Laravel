@@ -13,12 +13,24 @@ class GeneralController extends Controller
     public function getAll()
     {
 
+      if(Article::where('watch_ready', true)->count() == 0)
+      {
+
+        return view('errors.empty',[
+          'categories'       => $this->getCategoryAll(),
+          'popular_articles' => $this->getPopularArticles(),
+          'rec_articles'     => $this->getRecomendedArticles()
+      ]);
+
+      }
+
       return view('general',[
           'articles'         => Article::where('watch_ready', true)->simplePaginate(2),
           'categories'       => $this->getCategoryAll(),
           'popular_articles' => $this->getPopularArticles(),
           'rec_articles'     => $this->getRecomendedArticles()
       ]);
+
 
     }
 
@@ -33,7 +45,7 @@ class GeneralController extends Controller
         if($id_articles->count() == 0)
         {
 
-        return view('errors.empty',[
+        return view('errors.empty_category',[
             'categories' => $this->getCategoryAll(),
             'popular_articles' => $this->getPopularArticles(),
             'rec_articles' => $this->getRecomendedArticles()

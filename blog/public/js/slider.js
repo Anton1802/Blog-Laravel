@@ -41,27 +41,27 @@ $('.btn.public').click(function(){
 
 })
 
+  $('.btn.del').click(function(){
 
-//   $('.btn.del').click(function(){
-//
-//     var link = $(this).attr("href");
-//     var id = $(this).prop("id");
-//
-//     console.log(link);
-//     console.log(id);
-//
-//     $.ajax({
-//       url: link,
-//       method:"GET",
-//       success: function(data)
-//       {
-//
-//         // $(`#${id}`).remove();
-//         // alert('Успешно удалено');
-//
-//
-//       }
-//
-// })
-//
-// })
+    var link = $(this).attr("href");
+    var id = $(this).prop("id");
+
+    console.log(link);
+    console.log(id);
+
+    $.ajax({
+      url: link,
+      method:"GET",
+      success: function(data)
+      {
+
+        $(`.del#${id}`).remove();
+        $(`.t#${id}`).remove();
+        alert('Успешно удалено');
+
+
+      }
+
+})
+
+})

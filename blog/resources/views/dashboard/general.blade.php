@@ -63,17 +63,17 @@
         @endforeach
         @elseif(Auth::user()->isAdmin())
         @foreach($all_article as $article)
-        <tr>
-          <td>{{ Str::substr($article->title,0,10) }}...</td>
-          <td>{{ $article->nameCategory($article->id) }}</td>
-          <td>{{ $article->views }}</td>
-          <th>
+        <tr class="t" id="{{ $article->id }}">
+          <td class="t">{{ Str::substr($article->title,0,10) }}...</td>
+          <td class="t">{{ $article->nameCategory($article->id) }}</td>
+          <td class="t">{{ $article->views }}</td>
+          <th class="t">
             <div class="sl" style="width:120px">
               <div class="slide">
                 <a class="btn btn-primary btn-sm" href="dashboard/edit/{{ $article->id }}">Редактир</a>
               </div>
-              <div class="slide">
-                  <button class="btn btn-danger btn-sm" href="dashboard/del/{{ $article->id }}">Удалить</button>
+              <div class="slide del" id="{{ $article->id }}">
+                  <button class="btn btn-danger btn-sm del" id="{{ $article->id }}" href="dashboard/del/{{ $article->id }}">Удалить</button>
               </div>
               @if($article->watch_ready == false)
               <div class="slide public" id="{{ $article->id }}">
@@ -87,7 +87,6 @@
         </th>
         @endforeach
         @endif
-          </tr>
           </tbody>
         </table>
       </div>

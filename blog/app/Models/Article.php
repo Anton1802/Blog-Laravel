@@ -12,10 +12,10 @@ class Article extends Model
 
     protected $table = 'articles';
 
-    public function nameCategory($id_category)
+    public function category()
         {
 
-             return $this->find($id_category)->hasOne('App\Models\Category', 'id', 'category_id')->first()['name'];
+             return $this->hasOne('App\Models\Category', 'id', 'category_id');
 
         }
 
@@ -44,10 +44,10 @@ class Article extends Model
 
     }
 
-    public function getNameAuthor($user)
+    public function author()
     {
 
-       return $this->find($user)->hasOne('App\Models\User', 'id', 'user_id')->first()['name'];
+       return $this->hasOne('App\Models\User', 'id', 'user_id');
 
     }
 

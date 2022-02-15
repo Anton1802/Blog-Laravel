@@ -56,7 +56,7 @@
         @foreach($user_article as $article)
         <tr>
           <td>{{ Str::substr($article->title,0,10) }}...</td>
-          <td>{{ $article->nameCategory($article->id) }}</td>
+          <td>{{ $article->category['name'] }}</td>
           <td>{{ $article->views }}</td>
           </th>
         </tr>
@@ -65,7 +65,7 @@
         @foreach($all_article as $article)
         <tr class="t" id="{{ $article->id }}">
           <td class="t">{{ Str::substr($article->title,0,10) }}...</td>
-          <td class="t">{{ $article->nameCategory($article->id) }}</td>
+          <td class="t">{{ $article->category['name'] }}</td>
           <td class="t">{{ $article->views }}</td>
           <th class="t">
             <div class="sl" style="width:120px">

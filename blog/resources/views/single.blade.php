@@ -19,7 +19,7 @@
 					<p>Дата публикации: {{ $article->created_at }}</p>
 					<!-- Text -->
 					<p class="ptext">{{ $article->text }}</p>
-					<p>Автор статьи: {{ $article->getNameAuthor($article->user_id) }}</p>
+					<p>Автор статьи: {{ $article->author['name'] }}</p>
 					<p>{{ $article->views }} просмотр(ов)</p>
 				</div>
 

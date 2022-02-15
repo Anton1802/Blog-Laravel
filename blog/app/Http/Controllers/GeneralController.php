@@ -25,11 +25,12 @@ class GeneralController extends Controller
     public function getArticlesIdCategory($category_id)
     {
 
+
         $id_articles = Article::where('category_id', $category_id)
             ->where('watch_ready', true)
             ->simplePaginate(2);
 
-        if($id_articles == "")
+        if($id_articles->count() == 0)
         {
 
         return view('errors.empty',[

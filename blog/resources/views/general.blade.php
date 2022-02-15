@@ -20,10 +20,11 @@
     <p>{{ Str::substr($article->text, 0, 300)}}...</p>
     <p><b>{{ $article->views }} просмотр(ов)</b></p>
     <p>
-      <b>Автор статьи: {{ $article->getNameAuthor($article->id) }}</b>
+      <b>Автор статьи: {{ $article->author['name'] }}</b>
     </p>
   </div>
   @endforeach
+  {{ $articles->links('inc.pagination') }}
 </div>
 <div class="col-md-5 content-right">
 <h5 class="head">популярные</h5>
@@ -63,7 +64,5 @@
 </div>
 <div class="clearfix"></div>
 </div>
-
-{{ $articles->links('inc.pagination') }}
 
 @endsection

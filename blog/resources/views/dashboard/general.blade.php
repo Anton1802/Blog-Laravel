@@ -55,7 +55,7 @@
         @if(!Auth::user()->isAdmin())
         @foreach($user_article as $article)
         <tr>
-          <td>{{ $article->title }}</td>
+          <td>{{ Str::substr($article->title,0,10) }}...</td>
           <td>{{ $article->nameCategory($article->id) }}</td>
           <td>{{ $article->views }}</td>
           </th>
@@ -64,7 +64,7 @@
         @elseif(Auth::user()->isAdmin())
         @foreach($all_article as $article)
         <tr>
-          <td>{{ $article->title }}...</td>
+          <td>{{ Str::substr($article->title,0,10) }}...</td>
           <td>{{ $article->nameCategory($article->id) }}</td>
           <td>{{ $article->views }}</td>
           <th>

@@ -17,7 +17,7 @@ class SingleController extends Controller
     {
 
         $article = Article::where('id', $idArticle)->first();
-        $category = $this->getCategorySingle($article);
+        $category = $this->getCategorySingle($article->category_id);
         $comments = Comment::where('id_article', $idArticle)->get();
 
         $views = Article::select('views')->where('id', $idArticle)->first();
@@ -33,10 +33,10 @@ class SingleController extends Controller
 
     }
 
-    public function getCategorySingle($article)
+    public function getCategorySingle($id)
     {
 
-        $category = Category::where('id', $article->category_id)->first();
+        $category = Category::where('id', $id)->first();
         return $category;
 
     }

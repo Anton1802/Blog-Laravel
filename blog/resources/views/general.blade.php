@@ -53,7 +53,7 @@
         <a href="/single/{{ $article->id }}"><img src="{{ asset($article->path_img) }}" alt="" /></a>
       </div>
       <div class="e-pic-info">
-        <a href="/single/{{ $article->id }}">{{ Str::substr($article->title, 0, 20)}}</a>
+        <a href="/single/{{ $article->id }}">{{ Str::substr($article->title, 0, 20)}}...</a>
         <span></span>
         <label>{{ $article->pastDate() }}</label>
       </div>

@@ -41,7 +41,7 @@
       @elseif(Auth::user()->isAdmin())
       <h5 class="text-center" style="@if($user_article->count() == 0) display:none; @endif">Управление статьями</h5>
       @endif
-      <div class="table-responsive" style="height: 700px;">
+      <div class="table-responsive">
     <table class="table text-center table-info table-bordered" style="@if($user_article->count() == 0) display:none; @endif">
       <thead>
         <tr>
@@ -90,4 +90,17 @@
           </tbody>
         </table>
       </div>
+        <div class="col-auto">
+          <h5 class="text-center">Ваши комментарии</h5>
+        </div>
+        <div class="list-group text-center overflow-scroll" style="height: 300px;">
+          @foreach($comments as $comment)
+          <div class="list-group-item list-group-item-primary">{{$comment->text}}
+          <a class="position-absolute end-0 pe-2" href="/single/{{ $comment->id_article }}">статья</a>
+          </div>
+          @endforeach
+        </div>
+      </div>
+    </div>
+  </div>
       @endsection

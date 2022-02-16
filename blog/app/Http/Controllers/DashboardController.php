@@ -20,7 +20,8 @@ class DashboardController extends Controller
       return view('dashboard.general', [
           'user_article' => Article::where('user_id', Auth::id())->get(),
           'all_article' => Article::all(),
-          'count_comments' => Comment::where('username', Auth::user()->name)->count()
+          'count_comments' => Comment::where('username', Auth::user()->name)->count(),
+          'comments' => Comment::where('username', Auth::user()->name)->get()
       ]);
 
     }

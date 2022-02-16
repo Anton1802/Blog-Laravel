@@ -19,11 +19,13 @@
 					<p>Дата публикации: {{ $article->created_at }}</p>
 					<br>
 					<!-- Text -->
-					<div id="replace" class="text">
+					<div id="replace" class="text" style="img-responsive">
 					{{ $article->text }}
 				  </div>
+					<div class="additional text-right">
 					<p>Автор статьи: {{ $article->author['name'] }}</p>
 					<p>{{ $article->views }} просмотр(ов)</p>
+					</div>
 				</div>
 
 

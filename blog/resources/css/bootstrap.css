@@ -312,6 +312,9 @@ img {
   padding-left: 5px;
   padding-bottom: 10px;
   vertical-align: middle;
+  display: inline-block;
+  height: auto;
+  max-width: 100%;
 }
 .img-responsive,
 .thumbnail > img,

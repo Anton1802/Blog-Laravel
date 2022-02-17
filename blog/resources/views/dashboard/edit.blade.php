@@ -5,7 +5,6 @@
 @extends('dashboard.index')
 
 @section('content')
-
 <div class="container pt-5">
   <form action="", method="POST">
     @csrf
@@ -17,10 +16,9 @@
     </div>
     <div class="form-group">
     <label class="form-label">Текст</label>
-    <textarea name="text" id="text" class="form-control" rows="15">{{ $article->text }}</textarea>
+    <textarea name="text" id="text-edit" class="form-control" rows="15">{{ $article->text }}</textarea>
     </div>
     <button type="submit" class="btn btn-primary mt-2">Редактировать</button>
   </form>
 </div>
-
 @endsection

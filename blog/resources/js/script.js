@@ -66,4 +66,27 @@ $('.btn.ready').click(function(){
 
 })
 
+
+$('#text-edit').trumbowyg();
 $('#text').trumbowyg();
+
+
+var title;
+var text;
+var img;
+
+function save()
+{
+
+title = $('#title').val();
+text = $('#text').val();
+
+$.cookie('title', title);
+$.cookie('text', text);
+
+}
+
+setInterval(save, 2000);
+
+$('#title').val($.cookie('title'));
+$('#text').trumbowyg('html', $.cookie('text'));

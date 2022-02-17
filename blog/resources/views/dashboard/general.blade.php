@@ -95,7 +95,7 @@
         </div>
         <div class="list-group text-center overflow-scroll" style="height: 300px;">
           @foreach($comments as $comment)
-          <div class="list-group-item list-group-item-primary">{{$comment->text}}
+          <div class="list-group-item list-group-item-primary">{{Str::substr($comment->text, 0, 10)}}...
           <a class="position-absolute end-0 pe-2" href="/single/{{ $comment->id_article }}">статья</a>
           </div>
           @endforeach

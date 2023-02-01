@@ -12,3 +12,11 @@ There is a system of comments, sorting articles, top articles, etc.
 - HTML, CSS, JavaScript
 - Jquery(Ajax)
 # Screenshots:
+![](/images_repo/1.png)
+![](/images_repo/2.png)
+![](/images_repo/3.png)
+![](/images_repo/4.png)
+![](/images_repo/5.png)
+![](/images_repo/6.png)
+![](/images_repo/7.png)
+![](/images_repo/8.png)

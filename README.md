@@ -18,5 +18,3 @@ There is a system of comments, sorting articles, top articles, etc.
 ![](/images_repo/4.png)
 ![](/images_repo/5.png)
 ![](/images_repo/6.png)
-![](/images_repo/7.png)
-![](/images_repo/8.png)
